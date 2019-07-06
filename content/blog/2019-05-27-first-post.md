@@ -7,3 +7,9 @@ Here is some text
 ====
 
 Yeah ```Look at this```
+
+```javascript
+
+val s : String = s
+
+```
