@@ -18,10 +18,10 @@ class Layout extends React.Component {
           <Link to="/aboutme" className="nav-link">About Me</Link>
         </Navbar>
       </header>
-      <main>
+      <main className="pt-5">
         {children}
       </main>
-      <footer className="bg-dark pt-4 pb-4">
+      <footer id="footer" className="bg-dark pt-4 pb-4 ">
         <div className="container-fluid text-center text-md-left">
           <div className="row">
             <div className="pl-md-4 text-white">
