@@ -1,10 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import {Container, Col, Row} from "react-bootstrap"
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,8 +13,16 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
-        <Bio />
+        <Container>
+        <Row>
+          <Col>
+            <h1>Technical Blog</h1>
+          </Col>
+        </Row>
+          <Row>
+            <Col>
+
+
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -38,6 +45,9 @@ class BlogIndex extends React.Component {
             </div>
           )
         })}
+            </Col>
+          </Row>
+        </Container>
       </Layout>
     )
   }

@@ -73,7 +73,7 @@ class BlogIndex extends React.Component {
 
 const parallax = {
   backgroundColor: "black",
-  paddingTop: "350px"
+  height: "150px"
 }
 
 export default BlogIndex

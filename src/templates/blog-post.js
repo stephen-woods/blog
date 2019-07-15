@@ -1,62 +1,71 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import Img from "gatsby-image"
+import { Col, Container, Row } from "react-bootstrap"
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
+    const titleClass = post.frontmatter.titleClass || "text-white"
+    const titleClassFinal = "translate-up-100 " + titleClass + " text-shadow-1"
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
+        <Img fluid={featuredImgFluid}/>
+        <Container>
+          <Row>
+            <Col>
+              <h1 className={titleClassFinal}>{post.frontmatter.title}</h1>
 
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+              <p
+                style={{
+                  ...scale(-1 / 5),
+                  display: `block`,
+                  marginBottom: rhythm(1),
+                  marginTop: rhythm(-1),
+                }}
+              >
+                {post.frontmatter.date}
+              </p>
+              <div dangerouslySetInnerHTML={{ __html: post.html }}/>
+              <hr
+                style={{
+                  marginBottom: rhythm(1),
+                }}
+              />
 
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
+              <ul
+                style={{
+                  display: `flex`,
+                  flexWrap: `wrap`,
+                  justifyContent: `space-between`,
+                  listStyle: `none`,
+                  padding: 0,
+                }}
+              >
+                <li>
+                  {previous && (
+                    <Link to={previous.fields.slug} rel="prev">
+                      ← {previous.frontmatter.title}
+                    </Link>
+                  )}
+                </li>
+                <li>
+                  {next && (
+                    <Link to={next.fields.slug} rel="next">
+                      {next.frontmatter.title} →
+                    </Link>
+                  )}
+                </li>
+              </ul>
+            </Col>
+          </Row>
+        </Container>
       </Layout>
     )
   }
@@ -80,6 +89,14 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        titleClass
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800, maxHeight: 150) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

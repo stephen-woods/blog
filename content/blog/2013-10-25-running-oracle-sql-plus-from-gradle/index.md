@@ -1,9 +1,11 @@
 ---
-title: "Running Oracle SQL Plus From Gradle"
+title: "Running Oracle SQL Plus from Gradle"
 description: "How to prevent SQL Plus from blocking the build."
 date: "2013-10-25"
 draft: false
 author: Stephen Woods
+featuredImage: hello-i-m-nik-v8pL84kvTTc-unsplash.jpg
+titleClass: text-white
 tags:
   - Oracle
   - Gradle
@@ -38,14 +40,17 @@ Gradle has an experimental feature called the Gradle Daemon. The purpose of the 
 
 All you need to do is start up the gradle daemon. This is process that actually does the building
 
-```
+```shell
 gradle --foreground
 ```
 
 And then run your Gradle builds with the -daemon flag
 
-```
+```shell
 gradle --daemon build
 ```
 
 However, the Gradle Daemon can cause problems. You will most likely run into problems running SQL Plus from Gradle when using the Gradle Daemon. The reason is because SQL Plus is very dependent on environment variables. It uses environment variables to lookup TNSNames and load up various libraries. When you invoke a Gradle build with the –daemon flag, the build executes in the daemon”s environment, not the environment where the Gradle command was issued. This is very important and subtle distinction. As of Gradle Milestone-4, environment variables do not propagate to the Gradle daemon properly.
+
+
+Photo by [Hello I'm Nik 🇬🇧](https://unsplash.com/@helloimnik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on Unsplash
