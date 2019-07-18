@@ -12,15 +12,31 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
     const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
     const titleClass = post.frontmatter.titleClass || "text-white"
-    const titleClassFinal = "translate-up-100 " + titleClass + " text-shadow-1"
+    const titleClassFinal = + titleClass + " text-shadow-1"
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <Img fluid={featuredImgFluid}/>
+        <div style={{
+          position: "relative"
+        }}>
+        <Img style={{
+          height: 250
+        }} fluid={featuredImgFluid}/>
+        <Container>
+          <Row>
+          <Col style={{
+            position: "absolute",
+            bottom:"25px"
+          }}>
+          <h2 className="text-white text-shadow-1">{post.frontmatter.title}</h2>
+          </Col>
+          </Row>
+        </Container>
+        </div>
         <Container>
           <Row>
             <Col>
-              <h1 className={titleClassFinal}>{post.frontmatter.title}</h1>
+
 
               <p
                 style={{
@@ -92,7 +108,7 @@ export const pageQuery = graphql`
         titleClass
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 800, maxHeight: 150) {
+            fluid(maxWidth: 10000) {
               ...GatsbyImageSharpFluid
             }
           }

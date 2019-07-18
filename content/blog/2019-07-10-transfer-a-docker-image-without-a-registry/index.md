@@ -6,7 +6,7 @@ draft: false
 author: Stephen Woods
 featuredImage: aleksandr-kozlovskii-ZMOJit6rI6M-unsplash.jpg
 tags:
-  - docker
+  - Docker
 ---
 
 Ever wonder how you can transfer a Docker image from one host to another without having access to a Docker registry? Well 
@@ -23,7 +23,7 @@ are reachable on a fast local network as opposed to a VPN going over the Interne
 So, great! What's the problem then? Well, some images of the services that I rely on are stored in my client's private 
 Docker registry, but to get to them, I need to have an active VPN connection on each server. Unfortunately, the VPN server
 I use to connect to has an artificial limit to the number of connections you can make using the same set of credentials. So, because of
-some corporate policy, there's no way that I can get my laptop and all of the servers connected to the corporate network 
+some corporate policy, there's no easy way that I can get my laptop and all of the servers connected to the corporate network 
 all at the same time.
 
 What I'd really like to do is pull all of the images that I could possibly need to my Macbook Pro, and then push those 
