@@ -46,7 +46,9 @@ class BlogPostTemplate extends React.Component {
                   marginTop: rhythm(-1),
                 }}
               >
+                <span className="text-white text-shadow-1">
                 {post.frontmatter.date}
+                </span>
               </p>
               <div dangerouslySetInnerHTML={{ __html: post.html }}/>
               <hr
