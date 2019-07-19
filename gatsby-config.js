@@ -74,6 +74,14 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Roboto:100,400']
+        }
+      }
+    },
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-netlify`
   ],
