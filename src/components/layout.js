@@ -12,10 +12,13 @@ class Layout extends React.Component {
 
       <header>
         <Navbar bg="dark" variant="dark" fixed="top">
-          <Link to="/" className="navbar-brand">Stephen Woods</Link>
+          <div className="navbar-brand">STEPHEN WOODS</div>
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/about" className="nav-link">About</Link>
+          <Link to="/skills" className="nav-link">Skills</Link>
+          <Link to="/education" className="nav-link">Education</Link>
           <Link to="/blog" className="nav-link">Blog</Link>
-          <Link to="/resume" className="nav-link">Resume</Link>
-          <Link to="/aboutme" className="nav-link">About Me</Link>
+
         </Navbar>
       </header>
       <main className="pt-5 mb-5">
@@ -25,7 +28,7 @@ class Layout extends React.Component {
         <div className="container-fluid text-center text-md-left">
           <div className="row">
             <div className="pl-md-4 text-white">
-              Copyright © {new Date().getFullYear()}  Stephen Woods
+              Copyright © {new Date().getFullYear()} Stephen Woods. All Rights Reserved
             </div>
           </div>
         </div>
