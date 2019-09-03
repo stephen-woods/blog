@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Stephen Woods - Developer Blog`,
-    author: `Kyle Mathews`,
+    author: `Steve Woods`,
     description: `Thoughts and musings about software development.`,
     siteUrl: `https://stephenwoods.org`,
     social: {

@@ -36,6 +36,7 @@
     "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-socks": "^2.0.2",
     "react-typography": "^0.16.19",
     "redux": "^3.7.2",
     "sharp": "^0.22.1",
