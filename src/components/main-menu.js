@@ -2,8 +2,9 @@
 
 import React from "react"
 import Logo from "../components/logo.js"
-import styles from "../components/mainmenu.module.css"
+import styles from "./main-menu.module.css"
 import { useCurrentBreakpointName } from "react-socks"
+// FIXME instead of using react-socks, use redux-responsive
 import { Link } from "gatsby"
 import { Container, Col, MenuItem, Nav, Navbar, NavDropdown, Row, Tab } from "react-bootstrap"
 
@@ -28,8 +29,7 @@ class MainMenu extends React.Component {
 
 class NavMenu extends React.Component {
   render() {
-    return null
-
+    return <div>{this.props.visible}</div>
   }
 }
 

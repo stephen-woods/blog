@@ -1,8 +1,8 @@
 import React from "react"
+import { useSelector } from "react-redux"
 import { useStaticQuery, graphql } from "gatsby"
-import styles from "../components/logo.module.css"
-import { Breakpoint, BreakpointProvider } from "react-socks"
 
+import styles from "../components/logo.module.css"
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -13,18 +13,24 @@ export default () => {
     }
   `,
   )
-  return <BreakpointProvider>
-    <Breakpoint small down>
-      <div className={styles.s_logo}>
-        <img className={styles.s_img} src={data.file.publicURL} alt=""/>
-        <span className={styles.s_title}>Stephen Woods</span>
-      </div>
-    </Breakpoint>
-    <Breakpoint medium up>
-      <div className={styles.logo}>
-        <img className={styles.img} src={data.file.publicURL} alt=""/>
-        <span className={styles.title}>Stephen Woods</span>
-      </div>
-    </Breakpoint>
-  </BreakpointProvider>
+  const browser = useSelector(state => state.browser)
+
+  const s = browser.greaterThan.small ?
+    {
+      logo: styles.logo,
+      img: styles.img,
+      title: styles.title
+    } :
+    {
+      logo: styles.s_logo,
+      img: styles.s_img,
+      title: styles.s_title
+    };
+
+    return <div className={s.logo}>
+      <img className={s.img} src={data.file.publicURL} alt=""/>
+      <span className={s.title}>Stephen Woods</span>
+    </div>
 }
+
+

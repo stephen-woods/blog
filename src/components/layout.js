@@ -3,14 +3,14 @@ import { Link } from "gatsby"
 import { Container, Col, MenuItem, Nav, Navbar, NavDropdown, Row, Tab } from "react-bootstrap"
 import { rhythm, scale } from "../utils/typography"
 import { BreakpointProvider} from "react-socks"
-
-import MainMenu from "./mainmenu"
+import Logo from "./logo"
+import MainMenu from "./main-menu"
 class Layout extends React.Component {
 
   render() {
 
     const { location, title, children } = this.props
-    return  <BreakpointProvider><div><MainMenu/>
+    return  <MainMenu/>
 
       {/*<header>*/}
       {/*  <Navbar bg="dark" variant="dark" fixed="top">*/}
@@ -35,8 +35,6 @@ class Layout extends React.Component {
       {/*    </div>*/}
       {/*  </div>*/}
       {/*</footer>*/}
-    </div>
-    </BreakpointProvider>
   }
 
   // render() {
