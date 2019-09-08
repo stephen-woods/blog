@@ -6,10 +6,11 @@ const defaultState = {
   visible: true,
 }
 
-export default (mainMenu = defaultState, action) => {
+
+export default (menuList = defaultState, action) => {
   if (action.type === ActionTypes.MAIN_MENU_TOGGLE) {
-    return Object.assign({}, mainMenu, { visible: action.visible })
+    return Object.assign({}, menuList, { visible: !menuList.visible })
   }
-  return mainMenu
+  return menuList
 
 }

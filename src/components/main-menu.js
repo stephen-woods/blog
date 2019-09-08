@@ -1,39 +1,32 @@
-"use strict"
-
 import React from "react"
+import { useSelector } from "react-redux"
 import Logo from "../components/logo.js"
+import MenuList from "../components/menu-list"
+import MenuLink from "../components/menu-link"
 import styles from "./main-menu.module.css"
-import { useCurrentBreakpointName } from "react-socks"
-// FIXME instead of using react-socks, use redux-responsive
-import { Link } from "gatsby"
-import { Container, Col, MenuItem, Nav, Navbar, NavDropdown, Row, Tab } from "react-bootstrap"
 
-class MainMenu extends React.Component {
-  render() {
-    return <aside className={this.style()}>
-      <Logo/>
-      <NavMenu/>
-    </aside>
-  }
-
-  style() {
-    switch (this.props.breakpoint) {
-      case "xsmall":
-      case "small":
-        return [styles.menu, styles.s_menu].join(" ")
-      default:
-        return styles.menu
-    }
-  }
-}
-
-class NavMenu extends React.Component {
-  render() {
-    return <div>{this.props.visible}</div>
-  }
-}
 
 export default () => {
-  const breakpoint = useCurrentBreakpointName()
-  return <MainMenu breakpoint={breakpoint}/>
+  const browser = useSelector(state => state.browser);
+  return browser.greaterThan.small ? renderBig() : renderSmall()
+}
+
+function renderSmall() {
+
+  const s = [styles.menu, styles.s_menu].join(" ")
+  return <aside className={s}>
+    <Logo/>
+    <MenuLink/>
+    <MenuList/>
+
+  </aside>
+}
+
+function renderBig() {
+
+  const s = styles.menu
+  return <aside className={s}>
+    <Logo/>
+    <MenuList/>
+  </aside>
 }

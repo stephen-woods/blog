@@ -1,8 +1,8 @@
 import { combineReducers } from "redux"
 import {responsiveStateReducer} from 'redux-responsive'
-import mainMenu from "../reducers/main-menu"
+import mainList from "./menu_list"
 
 export default combineReducers({
-  mainMenu: mainMenu,
+  mainList: mainList,
   browser: responsiveStateReducer
 });
