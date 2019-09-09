@@ -1,7 +1,7 @@
 ---
 title: "Transferring a Docker image without a registry"
 description: "Ever wonder how you can transfer a Docker image from one host to another without having access to a Docker registry?"
-date: "2019-07-10"
+date: "2018-07-10"
 draft: false
 author: Stephen Woods
 featuredImage: aleksandr-kozlovskii-ZMOJit6rI6M-unsplash.jpg
@@ -49,7 +49,7 @@ And you can also include fetching from the corporate registry as part of the com
 server should be both accessible from the laptop:
 
 ```shell
-IMG=corpoate.host.com:imagename:v1.2.3; docker save $IMG | ssh user@server1 'docker load'
+IMG=corporate.host.com:imagename:v1.2.3; docker save $IMG | ssh user@server1 'docker load'
 ```
 
 One thing to note is that depending on how you have set things up, the remote account on the server probably does not 
@@ -58,7 +58,7 @@ a sudo user, as follows:
 
 
 ```shell
-IMG=corpoate.host.com:imagename:v1.2.3; docker save $IMG | ssh user@server1 'sudo docker load'
+IMG=corporate.host.com:imagename:v1.2.3; docker save $IMG | ssh user@server1 'sudo docker load'
 ``` 
 
 Now this downloads the image from the corporate registry server to my dev laptop over the VPN, and then exports the image
