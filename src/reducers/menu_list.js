@@ -3,7 +3,7 @@
 import * as ActionTypes from "../action-types"
 
 const defaultState = {
-  visible: true,
+  visible: false,
 }
 
 

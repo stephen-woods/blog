@@ -7,7 +7,7 @@ import styles from "./main-menu.module.css"
 
 
 export default () => {
-  const browser = useSelector(state => state.browser);
+  const browser = useSelector(state => state.browser)
   return browser.greaterThan.small ? renderBig() : renderSmall()
 }
 
@@ -15,9 +15,12 @@ function renderSmall() {
 
   const s = [styles.menu, styles.s_menu].join(" ")
   return <aside className={s}>
-    <Logo/>
-    <MenuLink/>
+    <div>
+      <Logo/>
+      <MenuLink/>
+    </div>
     <MenuList/>
+
 
   </aside>
 }

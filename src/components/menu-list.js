@@ -8,6 +8,7 @@ import styles from "./main-menu.module.css"
 
 export default () => {
   const browser = useSelector(state => state.browser);
+  const active = useSelector(state => state.mainList.visible)
 
   const s = browser.greaterThan.small ?
     {
@@ -16,16 +17,16 @@ export default () => {
       nav_al: [styles.nav_a, styles.s_nav_a_lastChild].join(" ")
     } :
     {
-      nav: styles.s_nav,
-      nav_a: styles.s_nav_a,
+      nav: active ? [styles.s_nav, styles.active].join(" ") : styles.s_nav,
+      nav_a: styles.nav_a,
       nav_al: [styles.nav_a, styles.s_nav_a_lastChild].join(" ")
     };
 
-  return <div className={s.nav}>
+  return <nav className={s.nav}>
     <Link to="/" className={s.nav_a}>Home</Link>
     <Link to="/about" className={s.nav_a}>About</Link>
     <Link to="/skills" className={s.nav_a}>Skills</Link>
     <Link to="/education" className={s.nav_a}>Education</Link>
     <Link to="/blog" className={s.nav_al}>Blog</Link>
-  </div>
+  </nav>
 }

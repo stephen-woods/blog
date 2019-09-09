@@ -41,12 +41,11 @@
 }
 
 .s_nav {
-    display: none
+    position: absolute;
+    top: 50px;
+    display: none;
 }
 
-.s_nav_a {
-    margin: 0 17px
-}
 .s_nav_a_last-child {
     border-bottom: none
 }
@@ -64,3 +63,10 @@
     text-align: center;
 }
 
+
+.active {
+    display: block;
+    overflow: visible !important;
+    width: 100% !important;
+    background-color: #000;
+}
