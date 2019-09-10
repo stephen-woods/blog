@@ -1,0 +1,26 @@
+.img {
+    height: 300px;
+}
+
+.subtitle {
+    font-size: 20px;
+    display: block;
+    position: absolute;
+    top:260px;
+    left:25px;
+    text-shadow: 2px 2px #000000
+}
+
+.title {
+    display: block;
+    position: absolute;
+    width: 90%;
+    white-space: nowrap;
+    top:200px;
+    left:25px;
+    font-size: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 2px 2px #000000
+
+}
