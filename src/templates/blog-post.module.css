@@ -3,7 +3,7 @@
 }
 
 .subtitle {
-    font-size: 20px;
+    font-size: 14px;
     display: block;
     position: absolute;
     top:260px;
@@ -16,9 +16,9 @@
     position: absolute;
     width: 90%;
     white-space: nowrap;
-    top:200px;
+    top:210px;
     left:25px;
-    font-size: 40px;
+    font-size: 32px;
     overflow: hidden;
     text-overflow: ellipsis;
     text-shadow: 2px 2px #000000
