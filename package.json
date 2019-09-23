@@ -32,6 +32,7 @@
     "gatsby-transformer-sharp": "^2.1.19",
     "immutable": "^3.8.2",
     "netlify-cms-app": "^2.9.1",
+    "prism-themes": "^1.1.0",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.9",

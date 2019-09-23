@@ -1,17 +1,27 @@
+.blogbanner {
+    position: relative;
+}
+
+.blogbody {
+    margin: 25px;
+}
+
 .img {
     height: 300px;
 }
 
 .subtitle {
+    color: white;
     font-size: 14px;
     display: block;
     position: absolute;
-    top:260px;
     left:25px;
+    top:260px;
     text-shadow: 2px 2px #000000
 }
 
 .title {
+    color: white;
     display: block;
     position: absolute;
     width: 90%;
