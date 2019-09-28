@@ -1,0 +1,32 @@
+.blog-card {
+    float: left;
+    position: relative;
+    margin: 0 2.5% 35px 0px;
+    min-height: 400px;
+    width: 47%
+}
+
+.s_blog-card {
+    float: left;
+    position: relative;
+    margin: 0 0 35px 0px;
+    min-height: 400px;
+    width: 100%
+}
+
+.img {
+    height: 200px;
+}
+
+.nav_a {
+    display: block;
+    text-align: left;
+    outline: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+
+}

@@ -2,7 +2,8 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import {Container, Col, Row} from "react-bootstrap"
+import BlogCard from "../components/blog-card"
+import style from "../pages/blog.module.css"
 
 class BlogIndex extends React.Component {
   render() {
@@ -12,37 +13,13 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <Container>
-        <Row>
-          <Col>
-            <h1>Technical Blog</h1>
-          </Col>
-        </Row>
-          <Row>
-            <Col>
+        <div className={style.blogListing}>
+          <div>
+            <h2>Blog</h2>
+          </div>
+          {posts.map(({ node }) => <BlogCard node={node}/>)}
+        </div>
 
-
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3>
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </div>
-          )
-        })}
-            </Col>
-          </Row>
-        </Container>
       </Layout>
     )
   }
@@ -65,9 +42,18 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
             title
+            date(formatString: "MMMM DD, YYYY")
             description
+            titleClass
+            tags
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
