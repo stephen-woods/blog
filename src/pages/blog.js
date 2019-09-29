@@ -15,7 +15,7 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <div className={style.blogListing}>
           <div>
-            <h2>Blog</h2>
+            <h2>BLOG</h2>
           </div>
           {posts.map(({ node }) => <BlogCard node={node}/>)}
         </div>

@@ -1,5 +1,9 @@
 .blog-listing {
-    width: 100%;
+    width: 98%;
     float: left;
     margin: 25px;
+}
+
+.title {
+    background-image: linear-gradient( to right, #f0f0f0, #fff,  #f0f0f0);
 }

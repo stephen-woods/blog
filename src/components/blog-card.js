@@ -13,7 +13,7 @@ export default (props) => {
   const title = node.frontmatter.title || node.fields.slug
   return <div className={style.blogCard} key={node.fields.slug}>
     <Img className={style.img} fluid={featuredImgFluid}/>
-    <div>{node.frontmatter.date}</div>
+    <div className={style.date}>{node.frontmatter.date}</div>
       <Link className={style.nav_a} to={node.fields.slug}>
         {title}
       </Link>

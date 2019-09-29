@@ -3,7 +3,9 @@
     position: relative;
     margin: 0 2.5% 35px 0px;
     min-height: 400px;
-    width: 47%
+    width: 46%;
+    padding: 5px;
+    box-shadow: 0 5px 15px 0 rgba(37,44,97,.15);
 }
 
 .s_blog-card {
@@ -11,7 +13,9 @@
     position: relative;
     margin: 0 0 35px 0px;
     min-height: 400px;
-    width: 100%
+    width: 100%;
+    padding: 5px;
+    box-shadow: 0 5px 15px 0 rgba(37,44,97,.15);
 }
 
 .img {
@@ -28,5 +32,9 @@
     color: #000;
     text-transform: uppercase;
     text-decoration: none;
+    min-height: 40px;
+}
 
+.date {
+    padding-top: 5px;
 }

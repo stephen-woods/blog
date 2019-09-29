@@ -18,6 +18,6 @@ export default (props) => {
       {children}
       <div style={{ height: "100px" }}/>
     </main>
-    <Footer/>
+
   </div>
 }
