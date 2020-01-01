@@ -1,5 +1,3 @@
-"use strict";
-
 import React from "react"
 import { useSelector } from "react-redux"
 import { useStaticQuery, graphql } from "gatsby"
@@ -9,7 +7,7 @@ import styles from "../components/logo.module.css"
 export default () => {
   const data = useStaticQuery(graphql`
     {
-      file (name: { eq: "logo" }) {
+      file (name: { eq: "swlogo" }) {
         publicURL
       }
     }

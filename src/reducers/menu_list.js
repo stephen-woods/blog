@@ -1,5 +1,3 @@
-"use strict"
-
 import * as ActionTypes from "../action-types"
 
 const defaultState = {
