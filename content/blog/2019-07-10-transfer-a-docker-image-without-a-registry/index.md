@@ -1,7 +1,7 @@
 ---
 title: "Transferring a Docker image without a registry"
 description: "Ever wonder how you can transfer a Docker image from one host to another without having access to a Docker registry?"
-date: "2018-07-10"
+date: "2019-07-10"
 draft: false
 author: Stephen Woods
 featuredImage: aleksandr-kozlovskii-ZMOJit6rI6M-unsplash.jpg
