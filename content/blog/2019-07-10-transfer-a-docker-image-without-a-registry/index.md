@@ -63,6 +63,6 @@ IMG=corporate.host.com:imagename:v1.2.3; docker save $IMG | ssh user@server1 'su
 
 Now this downloads the image from the corporate registry server to my dev laptop over the VPN, and then exports the image
 and transfers it over my local network to the server that's sitting under my desk. Once the image arrives, docker loads it
-and makes the image available for use when I deploy my app and services via Ansilble scripts.
+and makes the image available for use when I deploy my app and services via Ansible scripts.
 
 Photo by [Aleksandr Kozlovskii](https://unsplash.com/@myzhik1988?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on Unsplash
