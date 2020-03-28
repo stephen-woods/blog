@@ -1,6 +1,5 @@
 import React from "react"
 import MainMenu from "./main-menu"
-import Footer from "./footer"
 import styles from "../components/layout.module.css"
 import { useSelector } from "react-redux"
 

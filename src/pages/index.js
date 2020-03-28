@@ -1,8 +1,8 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-import { Col, Container, Row } from "react-bootstrap"
 import styles from "./index.module.css"
+import Img from "gatsby-image"
 
 export default (props) => {
 
@@ -10,8 +10,12 @@ export default (props) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
+  const frontImage = data.file.childImageSharp.fluid
+
+  console.log(data)
   return <Layout location={props.location} title={siteTitle}>
-    <div style={parallax}/>
+
+    <Img className={styles.img} fluid={frontImage}/>
     <div className={styles.indexbody}>
 
       {posts.map(({ node }) => {
@@ -40,19 +44,8 @@ export default (props) => {
         )
       })}
     </div>
-
-
-
-
   </Layout>
 }
-
-
-const parallax = {
-  backgroundColor: "grey",
-  height: "500px",
-}
-
 
 export const pageQuery = graphql`
   query {
@@ -61,7 +54,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 8) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 4) {
       edges {
         node {
           excerpt
@@ -76,6 +69,13 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+    file(relativePath: { eq: "steve-selfie.png" }) {
+      childImageSharp {       
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      } 
     }
   }
 `
