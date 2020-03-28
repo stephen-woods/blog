@@ -1,6 +1,7 @@
 ---
 title: "Using WebPack instead of WebJars"
 description: "Abandon Play Framework's default way of managing Javascript dependencies and replace with WebPack"
+blurb: "WebPack for Javscript dependencies in Play Framework"
 date: "2017-06-09"
 draft: false
 author: Stephen Woods

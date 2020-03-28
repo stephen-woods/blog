@@ -1,6 +1,7 @@
 ---
 title: "Transferring a Docker image without a registry"
 description: "Ever wonder how you can transfer a Docker image from one host to another without having access to a Docker registry?"
+blurb: "Using Docker 'save' and 'load' to move images"
 date: "2019-07-10"
 draft: false
 author: Stephen Woods

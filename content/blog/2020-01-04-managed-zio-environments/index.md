@@ -1,12 +1,14 @@
 ---
 title: "Managed ZIO Environments"
-description: "Providing managed lifecycles to ZIO environment modules"
+description: "Providing managed life cycles to ZIO environment modules"
+blurb: "Providing managed life cycles to ZIO environment modules"
 date: "2020-01-04"
 draft: true
 author: Stephen Woods
 featuredImage: marko-blazevic-GFFGe2eGmiM-unsplash.jpg
 tags:
   - ZIO
+  - Scala
 ---
 
 

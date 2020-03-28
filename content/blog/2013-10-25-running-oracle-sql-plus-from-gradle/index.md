@@ -1,6 +1,7 @@
 ---
 title: "Running Oracle SQL Plus from Gradle"
 description: "How to prevent SQL Plus from blocking the build."
+blurb: "How to prevent SQL Plus from blocking the build."
 date: "2013-10-25"
 draft: false
 author: Stephen Woods

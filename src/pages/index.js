@@ -14,7 +14,6 @@ export default (props) => {
   const frontImage = data.file.childImageSharp.fluid
 
   return <Layout location={props.location} title={siteTitle}>
-
     <Img className={styles.img} fluid={frontImage}/>
     <div className={styles.indexbody}>
       {posts.map(({ node }) => <BlogTab key={node.fields.slug} node={node}/>)}
@@ -40,7 +39,15 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            blurb
             tags
+            featuredImage {
+              childImageSharp {
+                fixed(width: 100, height: 100) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }
