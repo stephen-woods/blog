@@ -23,8 +23,7 @@ export default () => {
   return <nav className={s.nav}>
     <Link to="/" className={s.nav_a}>Home</Link>
     <Link to="/about" className={s.nav_a}>About</Link>
-    <Link to="/skills" className={s.nav_a}>Skills</Link>
-    <Link to="/education" className={s.nav_a}>Education</Link>
+    <Link to="/resume" className={s.nav_a}>Resume</Link>
     <Link to="/blog" className={s.nav_al}>Blog</Link>
   </nav>
 }
