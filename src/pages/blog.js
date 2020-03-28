@@ -17,7 +17,7 @@ class BlogIndex extends React.Component {
           <div>
             <h2>BLOG</h2>
           </div>
-          {posts.map(({ node }) => <BlogCard node={node}/>)}
+          {posts.map(({ node }) => <BlogCard key={node.fields.slug} node={node}/>)}
         </div>
 
       </Layout>
