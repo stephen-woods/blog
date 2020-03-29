@@ -109,17 +109,17 @@ client project summary {
     margin-bottom: 10px;
 }
 
-a:link {
+company a:link {
    color: #333363;
     text-decoration: none;
 }
 
-a:visited {
+company a:visited {
     color: #333363;
     text-decoration: none;
 }
 
-a:hover {
+company a:hover {
     color:blue;
     text-decoration: underline;
 }
