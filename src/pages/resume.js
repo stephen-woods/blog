@@ -30,6 +30,8 @@ export default (props) => {
             Skills and Experience
           </div>
 
+        </div>
+        <div className={style.resumeCard}>
           <div className={style.resumeHeader1}>
             Work History
           </div>
@@ -172,13 +174,17 @@ export default (props) => {
           <client>
             <name>United States Government Accountability Office (GAO)</name>
             <position>Technical Lead for the GAO Engagement Management System project</position>
+            <summary>
+              <ul>
+                <li>Served as Technical Lead and Scrum Master of a team of five developers.</li>
+              </ul>
+            </summary>
             <project>
               <name>GAO Engagement Management System (GEMS)</name>
               <summary>
                 An enterprise integration project focused on replacing legacy systems that are involved in the managing
                 the primary business function of the GAO.
                 <ul>
-                  <li>Served as Technical Lead and Scrum Master of a team of five developers.</li>
                   <li>Created a Java based library for interfacing the s3270 terminal emulator in order to access legacy
                     applications on the National Finance Center mainframe (s3270, Java Concurrency Library, Groovy for
                     code generation of screen scrapers).
@@ -319,6 +325,8 @@ export default (props) => {
             </project>
           </client>
 
+        </div>
+        <div className={style.resumeCard}>
           <company>
             <name>Lockheed Martin</name>
             <dates>1996 - 1999</dates>
@@ -351,10 +359,6 @@ export default (props) => {
               </summary>
             </project>
           </client>
-
-          <div className={style.resumeHeader1}>
-            Education
-          </div>
         </div>
       </div>
     </div>
