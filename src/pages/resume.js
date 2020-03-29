@@ -57,21 +57,40 @@ export default (props) => {
                   companies, stations, menus, and people across both video on demand and linear TV mediums filtered by
                   continuously changing time window and individual customer entitlements.
                 </li>
-                <li>Championed conversion effort from Subversion to Git for entire DC office of 100 developers,
-                  researchers, and operations staff (Atlassian Stash, GitLab, GitHub Enterprise.
+                <li>
+                  Championed conversion effort from <a href="https://subversion.apache.org/">Subversion</a> to
+                  <a href="https://git-scm.com/">Git</a> for entire DC office of 100 developers,
+                  researchers, and operations staff (
+                  <a href="https://www.atlassian.com/software/bitbucket">Atlassian Stash</a>,
+                  <a href="https://about.gitlab.com">GitLab</a>,
+                  <a href="https://github.com/enterprise">GitHub Enterprise.</a>).
                 </li>
-                <li>Established continuous integration and artifact releases (Maven, Artifactory, Atlassian Bamboo,
-                  SonarQube).
+                <li>Established continuous integration and artifact releases (
+                  <a href="https://maven.apache.org">Maven</a>,
+                  <a href="https://www.scala-sbt.org/">SBT</a>,
+                  <a href="https://jfrog.com/artifactory/">Artifactory</a>,
+                  <a href="https://www.atlassian.com/software/bamboo">Atlassian Bamboo</a>,
+                  <a href="https://jenkins.io/">Jenkins</a>,
+                  <a href="https://www.sonarqube.org/">SonarQube</a>).
                 </li>
                 <li>Helped manage Rancher based Kubernetes clusters hosted in Open Stack used by development and QA
                   teams.
                 </li>
-                <li>Created numerous custom Ansible roles and playbooks for development, QA, and production purposes.
+                <li>Created numerous custom <a href="https://www.ansible.com/">Ansible</a> roles and playbooks for
+                  development, QA, and production purposes.
                 </li>
-                <li>Created numerous Kubernetes Helm charts for development, QA, and production purposes.</li>
-                <li>Created a custom ScalaTest based testing framework used by all QA members for fast/parallel
-                  functional testing of stateful platform services deployed in Kubernetes (Scala, ScalaTest, Helm, ZIO,
-                  Play, Couchbase, Solr)
+                <li>Created numerous <a href="https://kubernetes.io/">Kubernetes</a> <a
+                  href="https://helm.sh/">Helm</a> charts for development, QA, and production purposes.
+                </li>
+                <li>Created a custom testing framework used by all QA members for fast/parallel
+                  functional testing of stateful platform services across multiple stacks deployed in <a href="https://kubernetes.io/">Kubernetes</a> (
+                  <a href="https://www.scala-lang.org/">Scala</a>,
+                  <a href="http://www.scalatest.org/">ScalaTest</a>,
+                  <a href="https://helm.sh/">Helm</a>,
+                  <a href="https://zio.dev/">ZIO</a>,
+                  <a href="https://www.playframework.com/">Play</a>,
+                  <a href="https://www.couchbase.com/products/server">Couchbase</a>,
+                  <a href="https://lucene.apache.org/solr/">Solr</a>)
                 </li>
               </ul>
             </summary>
@@ -347,15 +366,20 @@ export default (props) => {
               </ul>
             </summary>
             <project>
-              <name>Battlefield Ministry Tracking and Information System </name>
+              <name>Battlefield Ministry Tracking and Information System</name>
               <summary>
-                Prototype hardware/software solution for use by US Army chaplains on the battlefield to deliver pastoral care information back to the sustaining base using a wide range of commercial wireless handheld devices (Win32, WinCE, PalmOS, DOS). The success of this project opened the door for Lockheed Martin to win four new US Army research contracts.
+                Prototype hardware/software solution for use by US Army chaplains on the battlefield to deliver pastoral
+                care information back to the sustaining base using a wide range of commercial wireless handheld devices
+                (Win32, WinCE, PalmOS, DOS). The success of this project opened the door for Lockheed Martin to win four
+                new US Army research contracts.
               </summary>
             </project>
             <project>
               <name>Other Lockheed Martin Achievements</name>
               <summary>
-                <ul><li>Received Lockheed Martin Award of Excellence</li></ul>
+                <ul>
+                  <li>Received Lockheed Martin Award of Excellence</li>
+                </ul>
               </summary>
             </project>
           </client>

@@ -109,3 +109,18 @@ client project summary {
     margin-bottom: 10px;
 }
 
+a:link {
+   color: #333363;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #333363;
+    text-decoration: none;
+}
+
+a:hover {
+    color:blue;
+    text-decoration: underline;
+}
+
