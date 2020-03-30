@@ -4,12 +4,13 @@ import { responsiveStoreEnhancer } from "redux-responsive"
 
 export default () => {
 
-  const reduxDevToolsEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+//  const reduxDevToolsEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   return createStore(
     rootReducer,
     compose(
-      responsiveStoreEnhancer,
-      reduxDevToolsEnhancer
+      responsiveStoreEnhancer
+      // responsiveStoreEnhancer,
+      // reduxDevToolsEnhancer
     )
   )
 }
