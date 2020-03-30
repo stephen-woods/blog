@@ -8,6 +8,9 @@ export default (props) => {
   const { data } = props
   const siteTitle = data.site.siteMetadata.title
 
+  const now = new Date()
+  const professionalYears = now.getFullYear() - 1996
+
   return <Layout location={props.location} title={siteTitle}>
     <div>
       <div className={style.resumeOuter}>
@@ -20,7 +23,7 @@ export default (props) => {
             Professional Profile
           </div>
           <div className={style.resumeProfile}>
-            Highly skilled lead software engineer/architect with 24 years of progressive experience designing and
+            Highly skilled lead software engineer/architect with {professionalYears} years of progressive experience designing and
             implementing software systems using numerous complementary technologies and polyglot programming paradigms.
             Extensive experience in scalable enterprise web application development and technical leadership for large
             reactive projects. Very fast learner with excellent communication and mentoring skills. Team player with
@@ -47,7 +50,7 @@ export default (props) => {
           </company>
 
           <client>
-            <name><a href="https://corporate.comcast.com/company/xfinity">Comcast ComPASS Labs</a></name>
+            <name><a href="https://corporate.comcast.com/company/xfinity">Comcast AI and Discovery Labs</a></name>
             <position>Contractor - Technical Lead for Runtime Systems Search/Browse</position>
             <summary>
               <ul>
