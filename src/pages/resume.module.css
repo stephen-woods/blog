@@ -88,6 +88,7 @@ client name {
     margin-left: 60px;
 }
 
+
 client position {
     display: block;
     text-align: left;
@@ -109,18 +110,49 @@ client project summary {
     margin-bottom: 10px;
 }
 
-company a:link {
-   color: #333363;
-    text-decoration: none;
-}
-
-company a:visited {
+summary a:link {
     color: #333363;
     text-decoration: none;
 }
 
-company a:hover {
-    color:blue;
+summary a:visited {
+    color: #333363;
+    text-decoration: none;
+}
+
+summary a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+name a:link {
+    color: #333363;
+    text-decoration: none;
+}
+
+name a:visited {
+    color: #333363;
+    text-decoration: none;
+}
+
+name a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+url a:link {
+    color: #333363;
+    text-decoration: none;
+}
+
+
+url a:visited {
+    color: #333363;
+    text-decoration: none;
+}
+
+url a:hover {
+    color: blue;
     text-decoration: underline;
 }
 

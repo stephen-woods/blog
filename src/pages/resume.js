@@ -43,12 +43,11 @@ export default (props) => {
           </company>
           <company>
             <position>Founder and Principal Member</position>
-            <url>http://www.altarasystems.com</url>
+            <url><a href="http://www.altarasystems.com">http://www.altarasystems.com</a></url>
           </company>
 
-
           <client>
-            <name>Comcast ComPASS Labs</name>
+            <name><a href="https://corporate.comcast.com/company/xfinity">Comcast ComPASS Labs</a></name>
             <position>Contractor - Technical Lead for Runtime Systems Search/Browse</position>
             <summary>
               <ul>
@@ -58,20 +57,20 @@ export default (props) => {
                   continuously changing time window and individual customer entitlements.
                 </li>
                 <li>
-                  Championed conversion effort from <a href="https://subversion.apache.org/">Subversion</a> to
-                  <a href="https://git-scm.com/">Git</a> for entire DC office of 100 developers,
+                  Championed conversion effort from <a href="https://subversion.apache.org/">Subversion</a> to <a
+                  href="https://git-scm.com/">Git</a> for entire DC office of 100 developers,
                   researchers, and operations staff (
-                  <a href="https://www.atlassian.com/software/bitbucket">Atlassian Stash</a>,
-                  <a href="https://about.gitlab.com">GitLab</a>,
-                  <a href="https://github.com/enterprise">GitHub Enterprise.</a>).
+                  <a href="https://www.atlassian.com/software/bitbucket"> Atlassian Stash</a>,
+                  <a href="https://about.gitlab.com"> GitLab</a>,
+                  <a href="https://github.com/enterprise"> GitHub Enterprise.</a>).
                 </li>
                 <li>Established continuous integration and artifact releases (
                   <a href="https://maven.apache.org">Maven</a>,
-                  <a href="https://www.scala-sbt.org/">SBT</a>,
-                  <a href="https://jfrog.com/artifactory/">Artifactory</a>,
-                  <a href="https://www.atlassian.com/software/bamboo">Atlassian Bamboo</a>,
-                  <a href="https://jenkins.io/">Jenkins</a>,
-                  <a href="https://www.sonarqube.org/">SonarQube</a>).
+                  <a href="https://www.scala-sbt.org/"> SBT</a>,
+                  <a href="https://jfrog.com/artifactory/"> Artifactory</a>,
+                  <a href="https://www.atlassian.com/software/bamboo"> Atlassian Bamboo</a>,
+                  <a href="https://jenkins.io/"> Jenkins</a>,
+                  <a href="https://www.sonarqube.org/"> SonarQube</a>).
                 </li>
                 <li>Helped manage Rancher based Kubernetes clusters hosted in Open Stack used by development and QA
                   teams.
@@ -83,48 +82,57 @@ export default (props) => {
                   href="https://helm.sh/">Helm</a> charts for development, QA, and production purposes.
                 </li>
                 <li>Created a custom testing framework used by all QA members for fast/parallel
-                  functional testing of stateful platform services across multiple stacks deployed in <a href="https://kubernetes.io/">Kubernetes</a> (
+                  functional testing of stateful platform services across multiple stacks deployed in <a href="https://kubernetes.io/">Kubernetes</a>
+                  (
                   <a href="https://www.scala-lang.org/">Scala</a>,
-                  <a href="http://www.scalatest.org/">ScalaTest</a>,
-                  <a href="https://helm.sh/">Helm</a>,
-                  <a href="https://zio.dev/">ZIO</a>,
-                  <a href="https://www.playframework.com/">Play</a>,
-                  <a href="https://www.couchbase.com/products/server">Couchbase</a>,
-                  <a href="https://lucene.apache.org/solr/">Solr</a>)
+                  <a href="http://www.scalatest.org/"> ScalaTest</a>,
+                  <a href="https://helm.sh/"> Helm</a>,
+                  <a href="https://zio.dev/"> ZIO</a>,
+                  <a href="https://www.playframework.com/"> Play</a>,
+                  <a href="https://www.couchbase.com/products/server"> Couchbase</a>,
+                  <a href="https://lucene.apache.org/solr/"> Solr</a>)
                 </li>
               </ul>
             </summary>
             <project>
               <name>Relevance Engine for Xfinity (REX Query Engine)</name>
               <summary>
-                A highly customized Apache Solr based search engine that represents the backbone of Comcast’s X1 content
-                discovery platform. It is responsible for providing personalized search, browse, and recommendation
-                content on set top boxes, web clients, and handheld devices used by 30 million Xfinity customers and the
-                customers of partner licensees (Cox, Rogers, Sky, Videotron). 500 - 800 production instances deployed
+                A highly customized <a href="https://lucene.apache.org/solr/">Apache Solr</a> based search engine that
+                represents the backbone of Comcast’s <a
+                href="https://www.xfinity.com/support/articles/xfinity-tv-on-the-x1-platform">Xfinity X1</a>
+                content discovery platform. It is responsible for providing personalized search, browse, and
+                recommendation content on set top boxes, web clients, and handheld devices used by 30 million Xfinity
+                customers and the customers of partner licensees (Cox, Rogers, Sky, Videotron). 500 - 800 production
+                instances deployed
                 across 5 on-premise data centers and 3 Amazon AWS cloud regions depending on time of day.
                 <ul>
-                  <li>Designed and integrated customized scoring, sorting, and collection capabilities into Solr to
-                    provide flexible relevance options using Comcast proprietary relevance algorithms.
+                  <li>Designed and integrated customized scoring, sorting, and collection capabilities into <a
+                    href="https://lucene.apache.org/solr/">Solr</a> to provide flexible relevance options using
+                    Comcast proprietary relevance algorithms.
                   </li>
                   <li>Designed and implemented non-English preferred language support based on what programs are
                     currently available and what an individual customer is entitled to see.
                   </li>
-                  <li>Designed and implemented Apache Solr/Spring integration that allows Solr components to be managed
-                    by Spring and avoid class loader issues.
+                  <li>Designed and implemented <a href="https://lucene.apache.org/solr/">Apache Solr</a>/<a
+                    href="https://spring.io/">Spring</a> integration that allows <a
+                    href="https://lucene.apache.org/solr/">Solr</a> components to be managed
+                    by <a href="https://spring.io/">Spring</a> and avoid class loader issues.
                   </li>
                   <li>Created numerous request handlers and JSON response writers.</li>
                   <li>Created filter query parsers responsible for generating entity and showing core filter cache bit
                     sets for editorial collections, time windows, entitlements, and program availabilities
                   </li>
                   <li>Created a customized filter query parser responsible for performing a high performance “join”
-                    across entity, showing, station, channel, and media availability Solr cores required by all REX
+                    across entity, showing, station, channel, and media availability <a
+                      href="https://lucene.apache.org/solr/">Solr</a> cores required by all REX
                     queries.
                   </li>
-                  <li>Created optimized data structures derived from Lucene indexes used at runtime to drastically
-                    improve native Solr performance.
+                  <li>Created optimized data structures derived from <a
+                    href="https://lucene.apache.org/">Lucene</a> indexes used at runtime to drastically
+                    improve native <a href="https://lucene.apache.org/solr/">Solr</a> performance.
                   </li>
                   <li>Created system that continuously downloads ranking data from an external web service to decouple
-                    scoring data from Solr core indexes.
+                    scoring data from <a href="https://lucene.apache.org/solr/">Solr</a> core indexes.
                   </li>
                 </ul>
               </summary>
@@ -133,15 +141,30 @@ export default (props) => {
               <name>XNavi</name>
               <summary>
                 A high-performance data broker that allows Comcast legacy set top boxes to leverage the search, browse,
-                and editorial features of the X1 platform, by managing the coordination of various back end systems in a
-                completely non-blocking way.
+                and editorial features of the <a
+                href="https://www.xfinity.com/support/articles/xfinity-tv-on-the-x1-platform">Xfinity X1</a>
+                platform, by managing the coordination of various back end systems in a completely non-blocking way.
                 <ul>
-                  <li>Designed and implemented XML-based request handlers and response writers, as well as several ZIO
-                    effect services. (Scala, Play, ZIO, Couchbase, JAXB, Protobuf, RxScala, Caffeine)
+                  <li>Designed and implemented XML-based request handlers and response writers, as well as several <a
+                    href="https://zio.dev/">ZIO</a> effect services.
+                    (
+                    <a href="https://www.scala-lang.org/">Scala</a>,
+                    <a href="https://www.playframework.com/"> Play</a>,
+                    <a href="https://zio.dev/"> ZIO</a>,
+                    <a href="https://www.couchbase.com/products/server"> Couchbase</a>,
+                    <a href="https://www.oracle.com/technical-resources/articles/javase/jaxb.html"> JAXB</a>,
+                    <a href="https://developers.google.com/protocol-buffers"> Protocol Buffers</a>,
+                    <a href="http://reactivex.io/rxscala/"> RxScala</a>,
+                    <a href="https://github.com/ben-manes/caffeine"> Caffeine</a>
+                    )
                   </li>
-                  <li>Created a GoReplay middleware to forward production legacy traffic to development and QA testing
-                    instances using test data and filtering out purchase, rent, and session history transactions
-                    (Javascript, GoReplay)
+                  <li>Created a <a href="https://goreplay.org/">GoReplay</a> middleware to forward production legacy
+                    traffic to development and QA testing instances using test data and filtering out purchase, rent,
+                    and session history transactions
+                    (
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript</a>,
+                    <a href="https://goreplay.org/">GoReplay</a>
+                    )
                   </li>
                 </ul>
               </summary>
@@ -153,7 +176,17 @@ export default (props) => {
                 scalability issues associated with an ever-increasing Video-on-Demand catalog.
                 <ul>
                   <li>Created multiple prototypes and ran performance scenarios using production data and request
-                    traffic. (Scala, ZIO, Play, Solr-Cloud, Prometheus, Grafana, Helm, Kubernetes)
+                    traffic.
+                    (
+                    <a href="https://www.scala-lang.org/">Scala</a>,
+                    <a href="https://www.playframework.com/"> Play</a>,
+                    <a href="https://zio.dev/"> ZIO</a>,
+                    <a href="https://lucene.apache.org/solr/"> Solr Cloud</a>,
+                    <a href="https://prometheus.io/"> Prometheus</a>,
+                    <a href="https://grafana.com/"> Grafana</a>,
+                    <a href="https://helm.sh/"> Helm</a>,
+                    <a href="https://kubernetes.io/"> Kubernetes</a>
+                    )
                   </li>
                 </ul>
               </summary>
@@ -164,11 +197,24 @@ export default (props) => {
                 A high-performance caching layer responsible for providing metadata necessary for rendering REX QE
                 responses (media details, credits, menus, images, offers, purchases).
                 <ul>
-                  <li>Designed and created initial implementation that fetched JSON data from Couchbase, converted it to
-                    Thrift binary format, and stored resulting payload in a local Caffeine cache before returning to
-                    client. (Scala, Twitter Finagle/Thrift, Zookeeper)
+                  <li>Designed and created initial implementation that fetched JSON data from <a
+                    href="https://www.couchbase.com/products/server">Couchbase</a>, converted it to
+                    <a href="https://thrift.apache.org/">Thrift</a> binary format, and stored resulting payload in a
+                    local <a href="https://github.com/ben-manes/caffeine">Caffeine</a> cache before returning to
+                    client.
+                    (
+                    <a href="https://www.scala-lang.org/">Scala</a>,
+                    <a href="https://twitter.github.io/finagle/"> Twitter Finagle</a>,
+                    <a href="https://thrift.apache.org/"> Apache Thrift</a>,
+                    <a href="https://www.couchbase.com/products/server"> Couchbase</a>,
+                    <a href="https://zookeeper.apache.org/"> Zookeeper</a>,
+                    <a href="https://github.com/ben-manes/caffeine"> Caffeine</a>
+                    )
                   </li>
-                  <li>Updated RMD to provide GRPC/Protocol Buffer interface for use within Kubernetes cluster</li>
+                  <li>Updated RMD to provide a <a href="https://grpc.io/">GRPC</a>/<a
+                    href="https://developers.google.com/protocol-buffers">Protocol Buffer</a> interface for use
+                    within <a href="https://kubernetes.io/">Kubernetes</a> clusters
+                  </li>
                 </ul>
               </summary>
             </project>
@@ -180,10 +226,16 @@ export default (props) => {
                 looking for something else to watch).
                 <ul>
                   <li>Designed and implemented the MinREX playback system: a backend streaming system that reads
-                    incoming production REX requests from an Apache Kafka topic, replays a modified version of the
+                    incoming production REX requests from an <a href="https://kafka.apache.org/">Apache Kafka</a> topic, replays a modified version of the
                     request, and stores the resulting REX response in a Redis database. The cached responses are then
-                    fetched by a MinREX front end client when the REX system is under severe load. (Scala, Akka Streams,
-                    Reactive Kafka)
+                    fetched by a MinREX front end client when the REX system is under severe load.
+                    (
+                    <a href="https://www.scala-lang.org/">Scala</a>,
+                    <a href="https://doc.akka.io/docs/akka/current/stream/stream-introduction.html"> kka Streams</a>,
+                    <a href="https://doc.akka.io/docs/alpakka-kafka/current/home.html"> Reactive Kafka</a>,
+                    <a href="https://redis.io/"> Redis</a>,
+                    <a href="https://redis.io/topics/sentinel"> Redis Sentinel</a>
+                    )
                   </li>
                 </ul>
               </summary>
@@ -191,7 +243,7 @@ export default (props) => {
           </client>
 
           <client>
-            <name>United States Government Accountability Office (GAO)</name>
+            <name><a href="https://www.gao.gov/">United States Government Accountability Office (GAO)</a></name>
             <position>Technical Lead for the GAO Engagement Management System project</position>
             <summary>
               <ul>
@@ -204,28 +256,40 @@ export default (props) => {
                 An enterprise integration project focused on replacing legacy systems that are involved in the managing
                 the primary business function of the GAO.
                 <ul>
-                  <li>Created a Java based library for interfacing the s3270 terminal emulator in order to access legacy
-                    applications on the National Finance Center mainframe (s3270, Java Concurrency Library, Groovy for
-                    code generation of screen scrapers).
+                  <li>Created a Java based library for interfacing the <a href="http://x3270.bgp.nu/">s3270 IBM 3270 terminal emulator</a> in order to access legacy
+                    applications on the National Finance Center mainframe
+                    (
+                    <a href="http://x3270.bgp.nu/">s3270</a>,
+                    <a href="https://groovy-lang.org/"> Groovy</a> ).
                   </li>
-                  <li>Designed and implemented REST services serving semantic JSON messages (JAX-RS, Jackson).</li>
+                  <li>Used Groovy for code generation of screen scrapers</li>
+                  <li>Designed and implemented REST services serving semantic JSON messages
+                    (
+                    <a href="https://eclipse-ee4j.github.io/jersey/">Jersey JAX-RS</a>,
+                    <a href="https://github.com/FasterXML/jackson"> Jackson</a>,
+                    <a href="https://hibernate.org/"> Hibernate</a>,
+                    <a href="https://itextpdf.com/en/products/itext-7/itext-7-core"> iTextPDF</a>,
+                    <a href="https://www.oracle.com/database/"> Oracle Database</a>,
+                    <a href="https://dojotoolkit.org/"> Dojo</a>,
+                    <a href="https://www.sencha.com/products/extjs"> Sensha Ext JS</a>
+                    ).
+                  </li>
                 </ul>
               </summary>
             </project>
           </client>
 
           <client>
-            <name>United States Department of Justice - United States Trustees Program (USTP)</name>
+            <name><a href="https://www.justice.gov/ust">United States Department of Justice - United States Trustees Program (USTP)</a></name>
             <position>Java Architect (Subject Matter Expert) / Team Lead for Common Code</position>
             <summary>
               <ul>
                 <li>Served as chief software architect for the prime’s multi-vendor software development team of 16
-                  developers
-                  at USTP on eight concurrent bankruptcy related projects.
+                  developers at USTP on eight concurrent bankruptcy related projects.
                 </li>
                 <li>Advised and steered the government CIO office on long-term technical strategies.</li>
                 <li>Planned and executed numerous software development and production release efforts.</li>
-                <li>Wrote all of the Ant build scripts used to build and deploy each application.</li>
+                <li>Wrote all of the <a href="https://ant.apache.org/">Ant</a> build scripts used to build and deploy each application.</li>
               </ul>
             </summary>
             <project>
@@ -235,14 +299,24 @@ export default (props) => {
                 throughout the United States Trustee Program.
                 <ul>
                   <li>Designed and implemented most of the application including functionality that handles user
-                    navigation, page rendering, and database access (JBoss, SQL Server, JSP, Struts, Spring, Castor,
-                    AspectJ, jQuery, and Hibernate).
+                    navigation, page rendering, and database access
+                    (
+                    <a href="https://wildfly.org/">JBoss AS</a>,
+                    <a href="https://www.microsoft.com/en-us/sql-server/default.aspx"> Microsoft SQL Server</a>,
+                    <a href="https://en.wikipedia.org/wiki/JavaServer_Pages_Standard_Tag_Library"> JSP JSTL</a>,
+                    <a href="https://struts.apache.org/"> Apache Struts </a>,
+                    <a href="https://spring.io/"> Spring</a>,
+                    <a href="https://castor-data-binding.github.io/castor/main/index.html"> Castor</a>,
+                    <a href="https://www.eclipse.org/aspectj/"> AspectJ</a>,
+                    <a href="https://jquery.com/"> jQuery</a>, and
+                    <a href="https://hibernate.org/"> Hibernate</a>
+                    ).
                   </li>
                 </ul>
               </summary>
             </project>
             <project>
-              <name>Fee Information Collection System (FICS)</name>
+              <name><a href="https://www.justice.gov/ust/foia-privacy-act/fee-information-and-collection-system-fics">Fee Information Collection System (FICS)</a></name>
               <summary>
                 A complete redesign of the accounts receivable system that manages the billing and fees collected from
                 all Chapter 11 bankruptcy court cases in the United States. FICS manages roughly $1 million in fee
@@ -250,7 +324,16 @@ export default (props) => {
                 Program.
                 <ul>
                   <li>Designed and implemented most of the web application functionality that handles user navigation,
-                    database access, and searching (JBoss, DB2/AS400, JSP, Struts, Spring, Castor, and Hibernate).
+                    database access, and searching
+                    (
+                    <a href="https://wildfly.org/">JBoss AS</a>,
+                    <a href="https://www.ibm.com/products/db2-database"> DB2/AS400</a>,
+                    <a href="https://en.wikipedia.org/wiki/JavaServer_Pages_Standard_Tag_Library"> JSP JSTL</a>,
+                    <a href="https://struts.apache.org/"> Apache Struts</a>,
+                    <a href="https://spring.io/"> Spring</a>,
+                    <a href="https://castor-data-binding.github.io/castor/main/index.html"> Castor</a>, and
+                    <a href="https://hibernate.org/"> Hibernate</a>
+                    ).
                   </li>
                   <li>Designed and implemented complex business logic that determined what fee is assessed for each
                     debtor on a quarterly basis.
@@ -259,35 +342,59 @@ export default (props) => {
               </summary>
             </project>
             <project>
-              <name>Means Test Review (MTR)</name>
+              <name><a href="https://www.justice.gov/ust/means-testing">Means Test Review (MTR)</a></name>
               <summary>
                 A new software solution for determining the presumption of abuse when analyzing a debtor’s means test as
-                required by the Bankruptcy Abuse Protection and Consumer Protection Act of 2005.
+                required by the <a href="https://www.congress.gov/bill/109th-congress/senate-bill/256/text">Bankruptcy Abuse Protection and Consumer Protection Act of
+                2005</a>.
                 <ul>
                   <li>Designed and implemented major portions of the web application and background processes that
-                    interface with external and legacy systems (JBoss, DB2/AS400, SQL Server, JSP, Struts, Spring,
-                    Castor, ActiveMQ, and Hibernate).
+                    interface with external and legacy systems
+                    (
+                    <a href="https://wildfly.org/">JBoss AS</a>,
+                    <a href="https://www.ibm.com/products/db2-database"> DB2/AS400</a>,
+                    <a href="https://www.microsoft.com/en-us/sql-server/default.aspx"> Microsoft SQL Server</a>,
+                    <a href="https://en.wikipedia.org/wiki/JavaServer_Pages_Standard_Tag_Library"> JSP JSTL</a>,
+                    <a href="https://struts.apache.org/"> Apache Struts</a>,
+                    <a href="https://activemq.apache.org/"> Apache ActiveMQ</a>,
+                    <a href="https://spring.io/"> Spring</a>,
+                    <a href="https://castor-data-binding.github.io/castor/main/index.html"> Castor</a>, and
+                    <a href="https://hibernate.org/"> Hibernate</a>
+                    )
                   </li>
-                  <li>Prototyped fully functional search capability using Lucene/Hibernate Search.</li>
+                  <li>Prototyped fully functional search capability using <a href="https://lucene.apache.org/">Lucene</a>/<a href="https://hibernate.org/search/">Hibernate Search</a>.</li>
                 </ul>
               </summary>
             </project>
             <project>
-              <name>Credit Counseling/Debtor Education (CCDE) Certificate Generation System (CGS)</name>
+              <name><a href="https://www.justice.gov/ust/credit-counseling-debtor-education-information">Credit Counseling/Debtor Education (CCDE)</a> <a href="https://ccdecert.ustp.usdoj.gov/ccdecert/">Certificate Generation System (CGS)</a></name>
               <summary>A software solution for managing the credit counseling and debtor education agency debtor
-                certification process as required by the Bankruptcy Abuse Protection and Consumer Protection Act of
-                2005.
+                certification process as required by the <a href="https://www.congress.gov/bill/109th-congress/senate-bill/256/text">Bankruptcy Abuse Protection and Consumer Protection Act of
+                  2005</a>.
                 <ul>
                   <li>Designed and implemented major portions of the internal web application used to manage all of the
-                    companies providing credit counseling and debtor education services (JBoss, DB2/UDB, JSP, Struts,
-                    Spring, Hibernate).
+                    companies providing credit counseling and debtor education services
+                    (
+                    <a href="https://wildfly.org/">JBoss AS</a>,
+                    <a href="https://www.ibm.com/products/db2-database"> DB2/UDB</a>,
+                    <a href="https://en.wikipedia.org/wiki/JavaServer_Pages_Standard_Tag_Library"> JSP JSTL</a>,
+                    <a href="https://struts.apache.org/"> Apache Struts</a>,
+                    <a href="https://spring.io/"> Spring</a>, and
+                    <a href="https://hibernate.org/"> Hibernate</a>
+                    )
                   </li>
                   <li>Completely overhauled the external facing web application responsible for generating certificates
-                    signifying the completion of various courses required by the bankruptcy filing process (JBoss,
-                    Oracle, JSP, Struts, Spring, Hibernate).
+                    signifying the completion of various courses required by the bankruptcy filing process (
+                    <a href="https://wildfly.org/">JBoss AS</a>,
+                    <a href="https://en.wikipedia.org/wiki/JavaServer_Pages_Standard_Tag_Library"> JSP JSTL</a>,
+                    <a href="https://struts.apache.org/"> Apache Struts</a>,
+                    <a href="https://spring.io/"> Spring</a>,
+                    <a href="https://www.oracle.com/database/"> Oracle Database</a>, and
+                    <a href="https://hibernate.org/"> Hibernate</a>
+                    )
                   </li>
-                  <li>Implemented dynamic PDF certificate generation including embedded barcodes using PDFBox and
-                    iText.
+                  <li>Implemented dynamic PDF certificate generation including embedded bar codes using <a href="https://pdfbox.apache.org/">PDFBox</a> and
+                    <a href="https://itextpdf.com/en/products/itext-7/itext-7-core"> iTextPDF</a>.
                   </li>
                 </ul>
               </summary>
@@ -295,7 +402,7 @@ export default (props) => {
           </client>
 
           <client>
-            <name>Intrado</name>
+            <name><a href="https://www.intrado.com/">Intrado</a></name>
             <position>Senior Software Consultant</position>
             <project>
               <name>9-1-1 Information Manager</name>
@@ -303,19 +410,23 @@ export default (props) => {
                 resulting telephone number/driving direction discrepancies at the municipality level. This application
                 was the first of many that combined functionality from legacy SCC and Lucent Public Safety Systems Group
                 systems - managing more emergency response data records than any other system in the world. Initial
-                customers included Verizon, Pacific Bell, and Southwest Bell. http://www.intrado.com
+                customers included Verizon, Pacific Bell, and Southwest Bell.
                 <ul>
-                  <li>Implemented a flexible web application framework using XML/XSL/JavaScript page rendering
-                    techniques in a web portal architecture (Cocoon 2.0, Castor, and Weblogic 6.1).
+                  <li>Implemented a flexible web application framework using <a href="https://xerces.apache.org/">XML</a>/<a href="https://xalan.apache.org/">XSL</a>/<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a> page rendering
+                    techniques in a web portal architecture (
+                    <a href="https://cocoon.apache.org/">Apache Cocoon</a>,
+                    <a href="https://castor-data-binding.github.io/castor/main/index.html"> Castor</a>, and
+                    <a href="https://www.oracle.com/middleware/technologies/weblogic.html"> Web Logic Server</a>
+                    ).
                   </li>
-                  <li>Designed and implemented numerous Cocoon/Castor enabled session EJBs and BMP entity EJBs accessing
-                    several legacy databases (Informix 7.3).
+                  <li>Designed and implemented numerous  <a href="https://cocoon.apache.org/">Cocoon</a>/<a href="https://castor-data-binding.github.io/castor/main/index.html">Castor</a> enabled <a href="https://docs.oracle.com/cd/E16439_01/doc.1013/e13981/undejbs002.htm">session EJBs</a> and <a href="https://docs.oracle.com/cd/B14099_19/web.1012/b15505/bmp.htm>">BMP entity EJBs</a> accessing
+                    several legacy <a href="https://www.ibm.com/products/informix">Informix</a> databases.
                   </li>
                   <li>Designed a versatile XML report framework for generating reports in HTML, PDF, SVG and Excel
                     formats.
                   </li>
-                  <li>Designed and implemented a multi-threaded RMI server for scheduling report generation during
-                    off-peak hours using a customized version of open-source Quartz scheduling libraries.
+                  <li>Designed and implemented a multi-threaded <a href="https://en.wikipedia.org/wiki/Java_remote_method_invocation">RMI</a> server for scheduling report generation during
+                    off-peak hours using a customized version of open-source <a href="http://www.quartz-scheduler.org/">Quartz</a> scheduling libraries.
                   </li>
                 </ul>
               </summary>
@@ -330,14 +441,14 @@ export default (props) => {
               <summary>
                 Pure J2EE XML enabled customer care application suite that allowed a company’s customer base to select
                 and maintain their own products and services over the Internet while allowing the company to conduct
-                business with minimal human interaction. Specific functionality includes: Electronic Billing Presentment
-                and Payment, Product Catalog, Order Entry, Trouble Ticketing and Consolidated Billing.
+                business with minimal human interaction. Specific functionality included: electronic billing presentment
+                and payment, product catalog, order entry, trouble ticketing and consolidated billing.
                 <ul>
                   <li>Designed the graphic user interface for a desktop administration application used to configure and
-                    manage all aspects of the J1 platform. Implemented “admintool” as a Swing based EJB client.
+                    manage all aspects of the J1 platform. Implemented “admintool” as a <a href="https://en.wikipedia.org/wiki/Swing_(Java)">Swing</a> based <a href="https://en.wikipedia.org/wiki/Enterprise_JavaBeans">EJB</a> client.
                   </li>
                   <li>Implemented admintool modules to manage configuration and deployment settings, inline
-                    advertisement graphics, and the highly customizable XML based permissions and preferences framework.
+                    advertisement graphics, and J1's highly customizable XML based permissions and preferences framework.
                   </li>
                 </ul>
               </summary>
@@ -353,15 +464,14 @@ export default (props) => {
           </company>
           <company>
             <position>Sr. Associate Software Developer</position>
-            <url>http://www.lockheedmartin.com</url>
+            <url><a href="https://www.lockheedmartin.com/en-us/index.html">http://www.lockheedmartin.com</a></url>
           </company>
           <client>
             <summary>
               <ul>
-                <li>Researched emerging Internet technologies under the direction of Dr. Keith Werkman.</li>
-                <li>Researched emerging distributed computing technologies under the direction of Dr. Will Tracz.</li>
-                <li>Created a reuse metrics calculator under the direction of Dr. Jeffrey Poulin for his book
-                  Measuring Software Reuse: Principles, Practices, and Economic Models.
+                <li>Researched emerging Internet technologies under the direction of <a href="https://www.linkedin.com/in/keith-werkman-b7955119">Dr. Keith Werkman.</a></li>
+                <li>Researched emerging distributed computing technologies under the direction of <a href="http://tracz.org/will/tracz-full-bio.html">Dr. Will Tracz.</a></li>
+                <li>Created a reuse metrics calculator under the direction of <a href="http://jeffreypoulin.info/">Dr. Jeffrey Poulin</a> for his book <a href="https://www.amazon.com/Measuring-Software-Reuse-Principles-Practices/dp/0201634139">Measuring Software Reuse: Principles, Practices, and Economic Models.</a>
                 </li>
               </ul>
             </summary>
@@ -370,8 +480,16 @@ export default (props) => {
               <summary>
                 Prototype hardware/software solution for use by US Army chaplains on the battlefield to deliver pastoral
                 care information back to the sustaining base using a wide range of commercial wireless handheld devices
-                (Win32, WinCE, PalmOS, DOS). The success of this project opened the door for Lockheed Martin to win four
+                (
+                <a href="https://en.wikipedia.org/wiki/Windows_API#Versions">Win32</a>,
+                <a href="https://en.wikipedia.org/wiki/Windows_Embedded_Compact"> WinCE</a>,
+                <a href="https://en.wikipedia.org/wiki/Palm_OS"> PalmOS</a>, and
+                <a href="https://en.wikipedia.org/wiki/DOS"> DOS</a>). The success of this project opened the door for Lockheed Martin to win four
                 new US Army research contracts.
+                <p/>
+                <a href="https://ieeexplore.ieee.org/document/821408">J. Impson, S. Kupst, N. Mehravari, S. Rush and S. Woods, "Portable wireless battlefield ministration tracking and information system," MILCOM 1999. IEEE Military Communications. Conference Proceedings (Cat. No.99CH36341), Atlantic City, NJ, USA, 1999, pp. 1272-1276 vol.2.</a>
+
+
               </summary>
             </project>
             <project>
