@@ -1,7 +1,7 @@
 ---
 title: "Using WebPack instead of WebJars"
 description: "Abandon Play Framework's default way of managing Javascript dependencies and replace with WebPack"
-blurb: "WebPack for Javscript dependencies in Play Framework"
+blurb: "WebPack for Javascript dependencies in Play Framework"
 date: "2017-06-09"
 draft: false
 author: Stephen Woods
@@ -21,7 +21,7 @@ developer instances.
 
 After setting you standard Play Framework project, getting some partial functionality up and running on the server side,
 I ran into a wall when starting the front end. Play recommends the use of WebJars for managing front end Javascript dependencies,
-as opposed to using tools such as NPM/Bower/WebPack that are so familiar to UI web developers. Rather than installing JavaScript as a
+as opposed to using tools such as NPM/Bower/WebPack that are so familiar to UI web developers. Rather than installing Javascript as a
 node module, Javascript packaged as a WebJar is... well a JAR file - a traditional Java archive with Maven based version and 
 dependency meta-data bundled within. And as such, from a back end perspective, we can treat it just like any other JAR. 
 The nice thing is that now server side dependencies and front end dependencies can be managed by a single build tool. In
