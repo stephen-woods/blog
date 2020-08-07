@@ -207,7 +207,7 @@ So let's make a new enhanced "stream" ZIO effect that does what we want.
       inboundStream <- UIO(
         SillyServiceClient
            .stream(outboundMessageStream2)
-           .provideLayer(rexMsEntityClientLayer))
+           .provideLayer(sillyServiceClientLayer))
 
       // Tap the inbound message stream so that we can execute the duration functional effect on each inbound message.
       inboundStream2 <- UIO(
