@@ -1,5 +1,5 @@
 ---
-title: "Measuring Bi-directional ZStream Latency with ZIO/ScalaPB"
+title: "Bi-directional ZStream Latency with ZIO/ScalaPB"
 description: "Tapping, Timing and Refs within ZStreams"
 blurb: "Learn how to measure latency of messages over a bi-directional GRPC stream using ZIO/ScalaPB"
 date: "2020-08-01"
@@ -10,7 +10,6 @@ tags:
   - ZIO
   - Scala
 ---
-
 
 Progression of Micro Service Communication
 ===
