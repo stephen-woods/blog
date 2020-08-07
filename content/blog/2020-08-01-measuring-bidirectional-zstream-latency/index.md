@@ -153,9 +153,9 @@ already set up, and all we need to do is call it with some duration.
 
 ```scala
 // Convenient implicit conversion that converts a Duration to a double that can be used to observe on a Histogram
-  implicit def durationToSeconds(duration: Duration): Double = {
-    duration.toMillis.toDouble / 1000
-  }
+implicit def durationToSeconds(duration: Duration): Double = {
+  duration.toMillis.toDouble / 1000
+}
 
 val durationFn = (duration: Duration) =>
       UIO(Metrics.grpcFetchLatency.observe(duration))
@@ -170,64 +170,64 @@ streams. Note that this is all executing on the client side of the call.
 So let's make a new enhanced "stream" ZIO effect that does what we want.
 
 ```scala
-  /**
-   * Returns a ZIO effect that establishes bi-directional streaming communication between two services by creating an
-   * inbound message stream to match the provided outbound message stream. The resulting stream is created by applying
-   * the outbound message stream to a factory effect, and provides the means of measuring the duration between sending
-   * a request message on the outbound stream and receiving a reply message on the inbound stream. To do so, on each
-   * inbound message received, the provided duration effectful function is executed if and only if a proceeding request
-   * was made; unsolicited replies will not cause the function to be called.
-   *
-   * @param outboundMessageStream out bound message stream
-   * @tparam E  the common error type used across both input and output streams, the factory effect, and the returned effect
-   * @tparam A  out bound message type
-   * @tparam B  in bound message type
-   * @tparam R1 the environment for the returned effect that is dependent on some Clock
-   * @return a ZIO effect that establishes bi-directional streaming communication between two services and allows measuring
-   *         the duration between requests and replies
-   */
-  def bidiTimedStreamIO[E, A, B, R1 <: Clock](outboundMessageStream: Stream[E, A]): URIO[R1, Stream[E, B]] = {
-    for {
-      // Get the clock from this effect's environment. We'll use this clock when manipulating the streams so the stream
-      // environments do not need to provide their own Clocks
-      r <- ZIO.environment[Clock]
+/**
+ * Returns a ZIO effect that establishes bi-directional streaming communication between two services by creating an
+ * inbound message stream to match the provided outbound message stream. The resulting stream is created by applying
+ * the outbound message stream to a factory effect, and provides the means of measuring the duration between sending
+ * a request message on the outbound stream and receiving a reply message on the inbound stream. To do so, on each
+ * inbound message received, the provided duration effectful function is executed if and only if a proceeding request
+ * was made; unsolicited replies will not cause the function to be called.
+ *
+ * @param outboundMessageStream out bound message stream
+ * @tparam E  the common error type used across both input and output streams, the factory effect, and the returned effect
+ * @tparam A  out bound message type
+ * @tparam B  in bound message type
+ * @tparam R1 the environment for the returned effect that is dependent on some Clock
+ * @return a ZIO effect that establishes bi-directional streaming communication between two services and allows measuring
+ *         the duration between requests and replies
+ */
+def bidiTimedStreamIO[E, A, B, R1 <: Clock](outboundMessageStream: Stream[E, A]): URIO[R1, Stream[E, B]] = {
+  for {
+    // Get the clock from this effect's environment. We'll use this clock when manipulating the streams so the stream
+    // environments do not need to provide their own Clocks
+    r <- ZIO.environment[Clock]
 
-      // Make a reference that represents the instant an message was sent on the outbound stream. Initially set to None.
-      // This reference will be set as request messages are sent and cleared when reply messages are received.
-      outboundInstant <- Ref.make[Option[Long]](None)
+    // Make a reference that represents the instant an message was sent on the outbound stream. Initially set to None.
+    // This reference will be set as request messages are sent and cleared when reply messages are received.
+    outboundInstant <- Ref.make[Option[Long]](None)
 
-      // Tap the outbound message stream to record the current time
-      outboundMessageStream2 <- UIO(
-        outboundMessageStream
-          .tap(_ => zio.clock.nanoTime.flatMap(now => outboundInstant.set(Some(now))))
-          .provide(r)
-      )
-
-      // Create the inbound message stream
-      inboundStream <- UIO(
-        SillyServiceClient
-           .stream(outboundMessageStream2)
-           .provideLayer(sillyServiceClientLayer))
-
-      // Tap the inbound message stream so that we can execute the duration functional effect on each inbound message.
-      inboundStream2 <- UIO(
-        inboundStream
-          .tap { _ =>
-            outboundInstant
-              .getAndSet(None)
-              .flatMap {
-                case None => ZIO.unit
-                case Some(outTime) =>
-                  zio.clock.nanoTime.flatMap { inTime =>
-                    val duration = Duration.fromNanos(inTime - outTime)
-                    durationFn(duration)
-                  }
-            }
-        }
+    // Tap the outbound message stream to record the current time
+    outboundMessageStream2 <- UIO(
+      outboundMessageStream
+        .tap(_ => zio.clock.nanoTime.flatMap(now => outboundInstant.set(Some(now))))
         .provide(r)
-      )
-    } yield inboundStream2
-  }
+    )
+
+    // Create the inbound message stream
+    inboundStream <- UIO(
+      SillyServiceClient
+         .stream(outboundMessageStream2)
+         .provideLayer(sillyServiceClientLayer))
+
+    // Tap the inbound message stream so that we can execute the duration functional effect on each inbound message.
+    inboundStream2 <- UIO(
+      inboundStream
+        .tap { _ =>
+          outboundInstant
+            .getAndSet(None)
+            .flatMap {
+              case None => ZIO.unit
+              case Some(outTime) =>
+                zio.clock.nanoTime.flatMap { inTime =>
+                  val duration = Duration.fromNanos(inTime - outTime)
+                  durationFn(duration)
+                }
+          }
+      }
+      .provide(r)
+    )
+  } yield inboundStream2
+}
 ```
 There are a number of things to note about the above code:
 
