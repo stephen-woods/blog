@@ -1,7 +1,7 @@
 ---
 title: "Bi-directional ZStream Latency with ZIO/ScalaPB"
 description: "Tapping, Timing and Refs within ZStreams"
-blurb: "Learn how to measure latency of messages over a bi-directional GRPC stream using ZIO/ScalaPB"
+blurb: "Tapping, Timing and Refs within ZStreams"
 date: "2020-08-01"
 draft: true
 author: Stephen Woods
