@@ -12,6 +12,7 @@ const ResumePage = (props) => {
     const professionalYears = now.getFullYear() - 1996
 
     return (
+        <Layout>
         <div>
             <div className={style.resumeOuter}>
                 <h2>RESUME</h2>
@@ -507,6 +508,7 @@ const ResumePage = (props) => {
                 </div>
             </div>
         </div>
+        </Layout>
     )
 }
 

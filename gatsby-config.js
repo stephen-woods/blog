@@ -12,6 +12,7 @@ module.exports = {
         },
     },
     plugins: [
+        "gatsby-plugin-breakpoints",
         "gatsby-plugin-google-gtag",
         "gatsby-plugin-image",
         "gatsby-plugin-sitemap",
