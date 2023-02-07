@@ -35,5 +35,8 @@
     "react-icons": "^4.7.1",
     "react-redux": "^8.0.5",
     "styled-components": "^5.3.6"
+  },
+  "override": {
+    "gatsby-plugin-breakpoints": "1.3.9"
   }
 }

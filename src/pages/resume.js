@@ -17,9 +17,6 @@ const ResumePage = (props) => {
             <div className={style.resumeOuter}>
                 <h2>RESUME</h2>
                 <div className={style.resumeCard}>
-                    Download PDF
-                </div>
-                <div className={style.resumeCard}>
                     <div className={style.resumeHeader1}>
                         Professional Profile
                     </div>

@@ -9,7 +9,7 @@ import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 
 const MainMenu = () => {
   const breakpoints = useBreakpoint()
-  return breakpoints.xs ? renderBig() : renderSmall()
+  return breakpoints.sm ? renderSmall() : renderBig();
 
 }
 
@@ -28,7 +28,9 @@ function renderSmall() {
 function renderBig() {
   const s = styles.menu
   return <aside className={s}>
+    <div>
     <MenuList/>
+    </div>
   </aside>
 }
 

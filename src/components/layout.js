@@ -6,7 +6,7 @@ import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 const Layout = (props) => {
     const {children} = props
     const breakpoints = useBreakpoint()
-    const s = breakpoints.xs ? styles.content : styles.s_content
+    const s = breakpoints.sm ? styles.s_content : styles.content;
 
     return <div>
         <header>
