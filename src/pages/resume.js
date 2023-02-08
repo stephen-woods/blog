@@ -3,11 +3,7 @@ import Layout from "../components/layout"
 import * as style from "../pages/resume.module.css"
 import { graphql } from "gatsby"
 
-const ResumePage = (props) => {
-
-    const { data } = props
-    const siteTitle = data.site.siteMetadata.title
-
+const ResumePage = () => {
     const now = new Date()
     const professionalYears = now.getFullYear() - 1996
 
@@ -15,7 +11,6 @@ const ResumePage = (props) => {
         <Layout>
         <div>
             <div className={style.resumeOuter}>
-                <h2>RESUME</h2>
                 <div className={style.resumeCard}>
                     <div className={style.resumeHeader1}>
                         Professional Profile
