@@ -8,16 +8,17 @@ const Layout = (props) => {
     const breakpoints = useBreakpoint()
     const s = breakpoints.sm ? styles.s_content : styles.content;
 
-    return <div>
-        <header>
-            <MainMenu/>
-        </header>
-        <main className={s}>
-            {children}
-            <div style={{height: "100px"}}/>
-        </main>
-
-    </div>
+    return (
+        <div>
+            <header>
+                <MainMenu/>
+            </header>
+            <main className={s}>
+                {children}
+                <div style={{height: "100px"}}/>
+            </main>
+        </div>
+    )
 }
 
 export default Layout;

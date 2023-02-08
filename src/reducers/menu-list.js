@@ -6,12 +6,15 @@ export const menuSlice = createSlice({
     visible: false
   },
   reducers: {
-    toggle: state => {
+    toggleMenuVisible: state => {
       state.visible = !state.visible
+    },
+    setMenuVisible: (state, action) => {
+      state.visible = action.payload
     }
   }
 })
 
-export const { toggle } = menuSlice.actions
+export const { toggleMenuVisible, setMenuVisible } = menuSlice.actions
 
 export default menuSlice.reducer
