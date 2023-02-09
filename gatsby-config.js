@@ -45,10 +45,18 @@ module.exports = {
         {
             resolve: 'gatsby-source-filesystem',
             options: {
-                "name": "pages",
-                "path": "./src/pages/"
+                "name": "blog",
+                "path": "./content/blog/"
             },
-            __key: "pages"
+            __key: "blog"
+        },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                "name": "assets",
+                "path": "./content/assets/"
+            },
+            __key: "assets"
         }
     ]
 };
