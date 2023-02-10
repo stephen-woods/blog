@@ -13,11 +13,15 @@ exports.createPages = ({graphql, actions}) => {
       allMdx(limit: $limit, sort: {frontmatter: {date: DESC}}) {
         edges {
           node {
-          fields {
-            slug
-          }
+            id
+            fields {
+              slug
+            }
             frontmatter {
               title
+            }
+            internal {
+              contentFilePath
             }
           }
         }
@@ -38,7 +42,7 @@ exports.createPages = ({graphql, actions}) => {
                 createPage({
                     // Path for this page — required
                     path: post.node.fields.slug,
-                    component: blogPostTemplate,
+                    component: `${blogPostTemplate}?__contentFilePath=${post.node.internal.contentFilePath}`,
                     context: {
                         // Add optional context data to be inserted
                         // as props into the page component.
@@ -48,6 +52,7 @@ exports.createPages = ({graphql, actions}) => {
                         //
                         // The page "path" is always available as a GraphQL
                         // argument.
+                        id: post.id,
                         slug: post.node.fields.slug,
                         previous,
                         next

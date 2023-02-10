@@ -8,17 +8,15 @@ const BlogPost = (props) => {
     const siteTitle = props.data.site.siteMetadata.title
     const {previous, next} = props.pageContext
     const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
-
     return (
         <Layout location={props.location} title={siteTitle}>
 
             <div className={styles.blogbanner}>
-
                 <span className={styles.title}>{post.frontmatter.title}</span>
                 <span className={styles.subtitle}>{post.frontmatter.date}</span>
             </div>
             <div className={styles.blogbody}>
-
+               {props.children}
 
                 <hr/>
 
@@ -68,7 +66,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        description
         titleClass
         featuredImage {
           childImageSharp {
