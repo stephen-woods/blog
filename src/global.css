@@ -1,6 +1,6 @@
 body {
     padding-top: 0;
-    font-family: 'Roboto';
+    font-family: 'Roboto', serif;
     font-weight: 400;
     margin: 0;
     background-color: #f0f0f0;
@@ -8,7 +8,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto';
+    font-family: 'Roboto', serif;
     font-weight: 400;
 }
 
@@ -30,4 +30,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .translate-up-100 {
     transform: translateY(-100px);
+}
+
+code {
+    font-size: 12px;
 }
