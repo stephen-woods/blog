@@ -22,8 +22,17 @@ module.exports = {
                 "icon": "src/images/icon.png"
             }
         },
-        "gatsby-plugin-mdx",
-        "gatsby-transformer-remark",
+        {
+            resolve: 'gatsby-plugin-mdx',
+            options: {
+                gatsbyRemarkPlugins: [
+                    {
+                        resolve: `gatsby-remark-prismjs`,
+                        options: {},
+                    }
+                ]
+            }
+        },
         "gatsby-plugin-sharp",
         "gatsby-transformer-sharp",
         {

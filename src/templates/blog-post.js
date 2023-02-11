@@ -12,20 +12,20 @@ const bodyStyle = {
     margin: "0 0 0 0"
 }
 
-const BlogPost = (props) => {
-    const post = props.data.mdx
-    const siteTitle = props.data.site.siteMetadata.title
-    const {previous, next} = props.pageContext
+const BlogPost = ({ data, location, children, pageContext}) => {
+    const post = data.mdx
+    const siteTitle = data.site.siteMetadata.title
+    const {previous, next} = pageContext
     const featuredImage = getImage(post.frontmatter.featuredImage)
     return (
-        <Layout location={props.location} title={siteTitle}>
+        <Layout location={location} title={siteTitle}>
             <div className={styles.blogbanner}>
                 <GatsbyImage image={featuredImage} alt="" style={heroImageStyle}/>
                 <span className={styles.title}>{post.frontmatter.title}</span>
                 <span className={styles.subtitle}>{post.frontmatter.date}</span>
             </div>
             <div className={styles.blogbody}>
-                {props.children}
+                {children}
 
                 <hr/>
 
@@ -85,9 +85,9 @@ export const pageQuery = graphql`
   }
 `
 
-export const Head = (props) => {
-    const siteTitle = props.data.site.siteMetadata.title
-    const title = props.data.mdx.frontmatter.title
+export const Head = ({data}) => {
+    const siteTitle = data.site.siteMetadata.title
+    const title = data.mdx.frontmatter.title
     return (
         <>
             <title>{siteTitle} - {title}</title>
