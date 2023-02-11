@@ -66,6 +66,14 @@ module.exports = {
                 "path": "./content/assets/"
             },
             __key: "assets"
+        },
+        {
+            resolve: 'gatsby-plugin-web-font-loader',
+            options: {
+                google: {
+                    families: ['Roboto:100,400']
+                }
+            }
         }
     ]
 };

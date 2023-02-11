@@ -3,6 +3,7 @@ import {Link, graphql} from "gatsby"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import  * as styles from "./blog-post.module.css"
+import "../global.css"
 
 const heroImageStyle = {
     height: "300px"

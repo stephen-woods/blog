@@ -1,3 +1,4 @@
 import wrapWithProvider from "./src/wrap-with-provider"
-require("prismjs/themes/prism-okaidia.css");
+import "./src/global.css"
+require('prism-themes/themes/prism-darcula.css');
 export const wrapRootElement = wrapWithProvider
