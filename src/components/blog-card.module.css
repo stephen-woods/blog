@@ -1,0 +1,29 @@
+.blog-card {
+
+    margin: 0 15px 20px 0;
+    min-height: 400px;
+
+    padding: 10px;
+    box-shadow: 0 5px 15px 0 rgba(37,44,97,.15);
+}
+
+.img {
+    height: 200px;
+}
+
+.nav_a {
+    display: block;
+    text-align: left;
+    outline: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+    min-height: 40px;
+}
+
+.date {
+    padding-top: 5px;
+}
