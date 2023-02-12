@@ -10,17 +10,22 @@ const heroImageStyle = {
 const BlogCard = ({node}) => {
     const title = node.frontmatter.title
     const image = getImage(node.frontmatter.featuredImage)
+    const badges = node.frontmatter.badges.map(badge => {
+        const url = "https://img.shields.io/badge/" + badge;
+        return <img src={url} alt={badge}/>
+    });
 
     return (
         <div className={styles.blogCard} key={node.fields.slug}>
-            <GatsbyImage image={image} alt="" style={heroImageStyle}/>
-            <div className={styles.date}>{node.frontmatter.date}</div>
-            <Link className={styles.nav_a} to={node.fields.slug}>
-                {title}
+            <Link className={styles.cardLink} to={node.fields.slug}>
+                <GatsbyImage image={image} alt="" style={heroImageStyle}/>
+                <div className={styles.date}>{node.frontmatter.date}</div>
+                <div className={styles.badges}>{badges}</div>
+                <div className={styles.nav_a}>{title}</div>
+                <p>
+                    {node.frontmatter.description || node.excerpt}
+                </p>
             </Link>
-            <p>
-                {node.frontmatter.description || node.excerpt}
-            </p>
         </div>
     )
 }

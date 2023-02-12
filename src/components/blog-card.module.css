@@ -1,14 +1,28 @@
 .blog-card {
-
     margin: 0 15px 20px 0;
     min-height: 400px;
-
     padding: 10px;
     box-shadow: 0 5px 15px 0 rgba(37,44,97,.15);
 }
 
 .img {
     height: 200px;
+}
+
+.card-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.badges {
+    margin-top: 3px;
+}
+
+.date {
+    color: white;
+    background: black;
+    padding: 5px;
+    font-size: 13px;
 }
 
 .nav_a {
@@ -21,7 +35,6 @@
     color: #000;
     text-transform: uppercase;
     text-decoration: none;
-    min-height: 40px;
 }
 
 .date {
