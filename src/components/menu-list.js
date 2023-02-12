@@ -18,7 +18,7 @@ const MenuList = () => {
         } :
         {
             nav: styles.nav,
-                nav_a: styles.nav_a,
+            nav_a: styles.nav_a,
             nav_al: [styles.nav_a, styles.s_nav_a_lastChild].join(" ")
         };
 
