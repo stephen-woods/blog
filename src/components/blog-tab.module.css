@@ -1,12 +1,13 @@
-.blog-card {
+.blog-tab {
     margin: 0 15px 20px 0;
-    min-height: 400px;
+    min-height: 100px;
     padding: 10px;
     box-shadow: 0 5px 15px 0 rgba(37,44,97,.15);
 }
 
-.img {
-    height: 200px;
+
+.date {
+    padding-top: 5px;
 }
 
 .card-link {
@@ -14,15 +15,8 @@
     color: #000;
 }
 
-.badges {
-    margin-top: 3px;
-}
-
-.date {
-    color: white;
-    background: black;
-    padding: 5px;
-    font-size: 13px;
+.content {
+    margin: 0 0 0 10px;
 }
 
 .nav_a {
@@ -35,4 +29,10 @@
     color: #000;
     text-transform: uppercase;
     text-decoration: none;
+}
+
+.tab-grid {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    margin: 5px;
 }

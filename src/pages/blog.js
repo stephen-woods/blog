@@ -29,7 +29,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx {
+    allMdx(sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
           excerpt

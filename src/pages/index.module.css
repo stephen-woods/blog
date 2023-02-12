@@ -1,0 +1,8 @@
+.indexbody {
+    margin: 25px;
+}
+
+.blog-grid {
+    display: grid;
+    margin: 5px;
+}
