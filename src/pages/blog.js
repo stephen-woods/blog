@@ -11,10 +11,7 @@ const BlogGrid = ({data, location}) => {
 
     return (
         <Layout location={location} title={siteTitle}>
-            <div className={styles.blogListing}>
-                <div>
-                    <h2 className={styles.title}>BLOG</h2>
-                </div>
+            <div className={styles.blogGrid}>
                 <div className={styles.blogGrid}>
                 {posts.map(({ node }) => <BlogCard key={node.fields.slug} node={node}/>)}
                 </div>
