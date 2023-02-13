@@ -5,14 +5,6 @@ import Layout from "../components/layout"
 import  * as styles from "./blog-post.module.css"
 import "../global.css"
 
-const heroImageStyle = {
-    height: "300px"
-}
-
-const bodyStyle = {
-    margin: "0 0 0 0"
-}
-
 const BlogPost = ({ data, location, children, pageContext}) => {
     const post = data.mdx
     const siteTitle = data.site.siteMetadata.title
@@ -21,7 +13,7 @@ const BlogPost = ({ data, location, children, pageContext}) => {
     return (
         <Layout location={location} title={siteTitle}>
             <div className={styles.blogbanner}>
-                <GatsbyImage image={featuredImage} alt="" style={heroImageStyle}/>
+                <GatsbyImage image={featuredImage} alt="" className={styles.heroImage}/>
                 <span className={styles.title}>{post.frontmatter.title}</span>
                 <span className={styles.subtitle}>{post.frontmatter.date}</span>
             </div>
@@ -29,16 +21,7 @@ const BlogPost = ({ data, location, children, pageContext}) => {
                 {children}
 
                 <hr/>
-
-                <ul
-                    style={{
-                        display: `flex`,
-                        flexWrap: `wrap`,
-                        justifyContent: `space-between`,
-                        listStyle: `none`,
-                        padding: 0,
-                    }}
-                >
+                <ul className={styles.prevNext}>
                     <li>
                         {previous && (
                             <Link to={previous.fields.slug} rel="prev">
@@ -93,7 +76,7 @@ export const Head = ({data}) => {
         <>
             <title>{siteTitle} - {title}</title>
             <meta name="description" content="Hello World"/>
-            <body style={bodyStyle}/>
+            <body className={styles.bodyStyle}/>
         </>
     )
 }
