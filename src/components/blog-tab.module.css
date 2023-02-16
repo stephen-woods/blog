@@ -1,0 +1,38 @@
+.blog-tab {
+    margin: 0 15px 20px 0;
+    min-height: 100px;
+    padding: 10px;
+    box-shadow: 0 5px 15px 0 rgba(37,44,97,.15);
+}
+
+
+.date {
+    padding-top: 5px;
+}
+
+.card-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.content {
+    margin: 0 0 0 10px;
+}
+
+.nav_a {
+    display: block;
+    text-align: left;
+    outline: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.tab-grid {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    margin: 5px;
+}

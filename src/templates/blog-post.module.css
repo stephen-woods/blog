@@ -1,0 +1,51 @@
+.blogbanner {
+    position: relative;
+}
+
+.blogbody {
+    margin: 25px;
+}
+
+.img {
+    height: 300px;
+}
+
+.subtitle {
+    color: white;
+    font-size: 14px;
+    display: block;
+    position: absolute;
+    left:25px;
+    top:260px;
+    text-shadow: 2px 2px #000000
+}
+
+.title {
+    color: white;
+    display: block;
+    position: absolute;
+    width: 90%;
+    white-space: nowrap;
+    top:210px;
+    left:25px;
+    font-size: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 2px 2px #000000
+}
+
+.prev-next {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0
+}
+
+.hero-image {
+    height: 300px;
+}
+
+.body-style {
+    margin: 0 0 0 0;
+}
