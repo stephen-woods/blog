@@ -55,13 +55,14 @@ const ResumePage = () => {
                                 <a href="https://www.rogers.com/"> Rogers</a>,
                                 <a href="https://www.sky.com/"> Sky</a>,
                                 <a href="https://videotron.com/en"> Videotron</a>
-                                ) to search or browse for available content on set top boxes, web clients, and handheld
-                                devices.
+                                ).
                                 <p/>
-                                REX provides the capability to search and browse for available on demand and linear content on
-                                set top boxes, web clients, and handheld devices filtered by continuously changing time window and
-                                individual customer entitlements. Consists of several micro services deployed in multiple kubernetes clusters
-                                across a global footprint spanning North America, Europe and Australia.
+                                REX provides the ability to quickly search for and browse over thousands of movies and shows playing on set top boxes, web clients, and handheld
+                                devices; this on-demand and on-air content is sourced from numerous providers, and is filtered by ever changing time windows and
+                                individual customer entitlements.
+                                <p/>
+                                REX comprises of several micro services deployed in multiple kubernetes clusters
+                                across a global footprint spanning North America, Europe and Australia (and soon Africa).
 
                                 <ul>
                                     <li>Lead a team of 10 developers and 6 testers for the overall design and implementation of latest multi-year development
@@ -83,7 +84,7 @@ const ResumePage = () => {
                                     <li>Designed and implemented multiple highly customized <a href="https://lucene.apache.org/solr/"> Solr </a>
                                         collectors, scorers, filter caches, field comparators, and query parser plugins</li>
                                     <li>Designed and implemented a non-blocking web front end that orchestrates numerous remote calls to back
-                                        end microservices
+                                        end microservices to satisfy a single user request
                                         (
                                         <a href="https://www.scala-lang.org/">Scala</a>,
                                         <a href="https://scalapb.github.io/"> ScalaPB</a>,
@@ -112,7 +113,8 @@ const ResumePage = () => {
                                         (
                                         <a href="https://zio.dev/">ZIO</a>,
                                         <a href="https://zio.dev/"> ZStreams</a>,
-                                        <a href="https://scalapb.github.io/"> ScalaPB</a>
+                                        <a href="https://scalapb.github.io/"> ScalaPB</a>,
+                                        <a href="https://grpc.io/"> GRPC</a>/<a href="https://developers.google.com/protocol-buffers">Protocol Buffer</a>
                                         )
                                     </li>
                                     <li>Designed and implemented a remote shared cache used to decorate search results with requested metadata
@@ -137,7 +139,8 @@ const ResumePage = () => {
                                         <a href="https://redis.io/topics/sentinel"> Redis Sentinel</a>
                                         )
                                     </li>
-                                    <li>Created a custom testing framework for fast/parallel functional testing of stateful platform services across multiple stacks deployed in <a href="https://kubernetes.io/">Kubernetes</a>
+                                    <li>Created a custom testing framework for fast/parallel functional testing of stateful platform services across
+                                        multiple stacks deployed in <a href="https://kubernetes.io/">Kubernetes </a>
                                         (
                                         <a href="https://www.scala-lang.org/">Scala</a>,
                                         <a href="http://www.scalatest.org/"> ScalaTest</a>,
@@ -166,7 +169,7 @@ const ResumePage = () => {
                                         <a href="https://github.com/openjdk/jmh"> JMH</a>
                                         )
                                     </li>
-                                    <li>Created numerous web based support tools and prototypes
+                                    <li>Created several web based support tools and prototypes
                                         (
                                         <a href="https://www.javascript.com/">JavaScript</a>,
                                         <a href="https://reactjs.org/"> React</a>,
@@ -508,10 +511,6 @@ const ResumePage = () => {
                         </ul>
 
                     </company>
-                    <client>
-
-
-                    </client>
                 </div>
             </div>
         </div>
