@@ -1,0 +1,140 @@
+---
+title: "Scala Java String Split Trap!"
+description: "Make sure you are calling the right split"
+blurb: "Providing managed life cycles to ZIO environment modules"
+date: "2024-02-01"
+draft: false 
+author: Stephen Woods
+featuredImage: photo-1504031489005-f460cef71269.avif
+badges:
+  - -java-orange?logo=oracle
+  - -scala-red?logo=scala
+tags:
+  - Scala
+  - Java 
+---
+
+The Java virtual machine is a modern marvel. So many hours of engineering have been put into it over the years 
+to produce a portable, performant and productive environment for thousands of mission critical applications and
+services. With the introduction of its namesake language, Java, the world was enamored with what it could do and
+what possibilities could be built on top of it. In the late 1990s, the Java hype train was strong and vibrant. Duke,
+Sun Microsystems cute little Java mascot was printed on coffee mugs and T-Shirts alike. 
+
+In 1999, I remember the excitement of attending my first JavaOne conference at the Moscone Center in downtown San
+Francisco. It was a huge event with about 20,000 people in attendence. I was a recent college graduate at the time, working
+in the Advanced Technology department at Lockheed Martin, Owego NY. It was essentially a department filled with brilliant 
+ex-IBM fellows with various PhDs... and a handful of minions like me that helped them get work done. We were tasked with
+researching emerging Internet, networking, distributed computing, and portable computing technologies and how they could be
+levereged on upcoming government contracts. I fondly remember my collegues and I walking out of that conference with a new
+shiny Palm V hand held PDA, an ancient predecessor to today's iPhone or iPad, with the promise that Java would run on everything.
+
+
+And it did.... for the most part. A huge industry was built around Java. But with all things, the luster began to fade. Java 
+went through a number of transformations throughout the years - most notabily the introduction of generics into the language by
+the Generic Java team that included Scala's own Martin Ordersky, and it continues to grow and change over the years. However, 
+its age is starting to show: it tends to be on the verbose side, and rely on a lot of boiler plate code. As a result, the world
+started to see new languages pop up that were built on top of the Java Virtual Machine, each intended to address some short comings
+of the original Java language (i.e. "to be a better Java"), introduce some new programming paradigm, or bring an existing language
+to the platform:
+
+- Scala
+- Kotlin
+- Groovy
+- Ceylon
+- Closure
+- Rhino, Nashorn (JavaScript)
+- Jython (Python)
+- JRuby (Ruby)
+- Blue Dragon (Cold Fusion)
+
+My first JVM deviation from the main Java language was Groovy. Though I didn't use it for any production code, I did use it a
+lot for code generation, unit testing, and some integration glue. Eventually, I transitioned to the Scala programming language.
+Like Groovy, it provided a nice mix of object oriented programming and functional programming principles, but with very strong
+typing. Since all of these new languages are built on top of the common JVM, they all, technically, should be able to leverage
+existing Java libraries (or even libraries built from different languages).
+
+Many of these languages provide conveniences that are just not available in the original Java language. For example, Scala adds a
+ton of convenience methods to existing base types found in Java. 
+
+```java
+// Java 
+String input = "123"
+int result = Integer.parseInt(input);
+
+
+// Scala
+val input = "123"
+val result = input.toInt
+```
+
+```java
+// Java 
+String input = "123"
+StringBuilder sb = new StringBuilder(input);
+sb.reverse();
+String result = sb.toString();
+
+// Scala
+val input = "123"
+val value = input.reverse()
+```
+
+In each of these cases, the variable 'input' is an actual 'java.lang.String' object. In Java, the String object does not have a 
+reverse method; we need to leverage the capabilities of a StringBuilder to accomplish the task. In Scala, however, the "123" 
+String literal _does_ have a reverse method. Given that variables are the same type in both languages, how is this possible? 
+It's possible through the use of _implicit conversions_.
+
+The implicit conversion mechanism is a means to automaticall convert a variable of one type into another type. Using a variable
+as a type it was not originally created for is a risky endeavor. Some compilers allow for that... often at your own determint 
+if you don't know what you are doing (think segmentation faults in C), where as some compilers will throw a compilation error 
+when you are making the attempt of using the wrong type (Strings and Integers in Java). Likewise, some compilers/languages realize
+that converting from two specific types is so common that there ought to be an automatic convenient way to do so to make the
+developer's life a little easier - implicit conversions.
+
+Java actually supports a very finite set of implicit conversions. For example, it is safe to assign an integer to a long variable
+in Java; the compiler does not complain that you are mixing two different types. Scala opens up the playing field completely, and 
+allows the developer make their own implicit conversions... and this is the means by which to seemingly add new methods to types
+that we don't necessarily own.
+
+So... in the above example, the Scala compiler realizes that the java.lang.String type does _not_ have a "reverse" method, but it
+does have an implicit conversion in scope that converts that "String" to a "StringOps" class, where the "StringOps" class _does_
+have a reverse method. For those wondering how this actually works, take a look at the "scala.Predef" class found in the
+"scala-library.jar". This class is loaded up automatically in every Scala program and includes the following function:
+
+```scala
+@inline implicit def augmentString(x: String): StringOps = new StringOps(x)
+```
+
+So at runtime, the program instantiates a new "StringOps" object that wraps the original "123" String literal, and then calls the 
+"reverse" method on that. The "reverse" method instantiates a new Java StringBuilder based on the "123" String literal, reverses it and then returns the final reversed String.
+
+```scala
+/** Returns new sequence with elements in reversed order.
+  * @note $unicodeunaware
+  */
+def reverse: String = new JStringBuilder(s).reverse().toString
+```  
+So in the end, it does essentially the same thing, but in a much more concise and intuitive way.
+
+Implicit conversions are a very convenient and powerful construct, and also form the basis for more advanced techniques, such as
+type classes in traditional functional programming. But as the adage goes, "with great power, comes great responsibility". Implicit
+conversions can often seem like magic as it may not be obvious where the implicit conversion is actually coming from. Luckily, 
+IDE's like JetBrain's IntelliJ with Scala plugin or Language Server Protocol enhanced editors such as Microsoft Visual Studio or 
+NeoVim with Scala Metals can provide additional insights as to what conversions are occurring in your code. But even, then you
+may still run into some unexpected pitfalls. This is one of them that took me a while to figure out...
+
+# Scala Split 
+So a while ago, I was working on a project that was upgrading from Scala 2.12 to Scala 2.13. As many of you probably know, 
+upgrading versions of Scala is not a trivial thing. Unlike Java, there can be breaking changes at the source code level. In
+this particular situation, I was working on some code that was dealing with an external JAR that was written in Java, and as such
+the data types used were those found in the plain ol' Java collections package. When writing idiomatic Scala, it is convienent to
+leverage the implicit conversion capabilities that the Scala library provides to convert from Java collection types to Scala
+collection types. Each version of Scala seems to come with a different class to do that.  
+
+In Scala 2.12, the recommended conversion class to use was "scala.collection.JavaConverters", whereas in Scala 2.13, the 
+recommended conversion class is "scala.jdk.CollectionConverters". In theory, they are supposed to behave the same way, but
+unfortunately they don't.
+
+```scala
+```
+
